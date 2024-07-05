@@ -41,7 +41,14 @@ const cards = [
     listings: '120+ listings',
     link: 'listings-map-grid-1.html',
   },
-  
+//   {
+//     id: 6,
+//     image: process.env.PUBLIC_URL + '/06.jpg',
+//     location: 'Italy',
+//     city: 'Vanish City',
+//     listings: '120+ listings',
+//     link: 'listings-map-grid-1.html',
+//   }
 ];
 
 const CardSwiper = () => {
