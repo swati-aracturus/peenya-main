@@ -28,7 +28,7 @@ const Registration = () => {
   };
 
   const cards = Array.from({ length: 5 }, (_, index) => (
-    <div key={index} className="card mr-10 flex p-0  ">
+    <div key={index} className="card mr-10 flex p-0  sd:flex-wrap">
       <img
         alt="ecommerce"
         className="lg:w-1/2  lg:h-auto h-64 object-cover object-center rounded"
@@ -382,7 +382,7 @@ const Registration = () => {
       </div>
 
       <div className="bg-[#F84525]">
-        <div className="flex justify-center ">
+        <div className="flex justify-center pb-12 ">
           <div
             className="pt-[10%] ps:pt-[20%] aos-init aos-animate w-full"
             data-aos="fade-down"
@@ -401,51 +401,55 @@ const Registration = () => {
 
             <CardSwiper />
 
-            <div className="flex flex-wrap justify-center align-center px-16">
-              <div className="w-1/2 ">
-                <h1 className="pl-[10%] text-[50px] text-white">
+            <div className="flex sd:flex-wrap justify-center align-center w-full sd:px-0 px-16">
+              <div className="w-1/2 sd:w-full">
+                <h1 className="pl-[10%] sd:px-4 py-6 sd:text-2xl text-[50px] justify-center text-white">
                   Find your perfect Place based on your interest
                 </h1>
                 <img
-                  className="p-[5%]  rounded-[70px]"
+                  className="px-[5%] pb-[10%]  rounded-t-[10%] rounded-b-[100px] sd:rounded-b-[50px] "
                   alt="book"
-                  src="https://fastly.picsum.photos/id/24/4855/1803.jpg?hmac=ICVhP1pUXDLXaTkgwDJinSUS59UWalMxf4SOIWb9Ui4"
+                  src="https://dummyimage.com/600x350/000/fff"
                 />
               </div>
-              <div className="w-1/2">
-                <p className="mb-2 text-lg px-[10%] pt-[5%] text-white">
+
+
+
+              <div className="w-1/2 sd:w-full flex justify-center items-center">
+              <div>
+                <p className="mb-2 text-xl sd:text-sm px-[10%] pt-[5%] text-white">
                   Want to have a fantastic travel experience? Let us connect you
                   with diverse categories of businesses, public spots, and
                   famous landmarks so that you can create unforgettable
                   memories.
                 </p>
-                <ul className="list-disc mx-4 text-lg text-white px-[10%]">
-                  <li className="mb-2">
+                <ul className="list-disc sd:text-sm mx-4 text-xl text-white pl-[10%] pr-[25%] sd:pr-[5%]">
+                  <li className="mb-2 py-2 sd:py-0 ">
                     Find popular businesses and important sites near you.
                   </li>
-                  <li className="mb-2">
+                  <li className="mb-2 py-2">
                     Get place recommendations based on your preferences.
                   </li>
-                  <li className="mb-2">
+                  <li className="mb-2 py-2">
                     Explore major spots and landmarks around your location.
                   </li>
-                  <li className="mb-2">
+                  <li className="mb-2 py-2">
                     Discover diverse categories to navigate various areas.
-                  </li>
-                </ul>
+                  </li> </ul>
                 <button className="bg-white rounded my-4 mx-[10%] p-2">
                   Get Started Now
                 </button>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
 
-      <div className="flex justify-center align-center w-full py-[5%]  mx-auto">
-        <div className="w-[35%] sd:w-full pl-[10%] py-6">
-          <p className=" text-4xl ps:text-lg text-[#F84525]">Places</p>
-          <h1 className="text-5xl font-medium sd:text-2xl  pt-4 pb-0 sd:pb-2 sd:leading-3">
+      <div className="flex sd:flex-wrap justify-center align-center w-full py-[5%]  mx-auto">
+        <div className="w-[35%] sd:w-full pl-[10%] sd:px-[5%] py-6">
+          <p className=" text-4xl ps:text-lg text-[#F84525] sd:text-center">Places</p>
+          <h1 className="text-5xl font-medium sd:text-2xl sd:text-center pt-4 sd:pt-1 sd:leading-6 pb-0 sd:pb-2 ">
             Discover Your Favourite Place
           </h1>
           <p className="text-justify text-md  py-6 sd:pt-1 sd:text-xs">
@@ -454,10 +458,10 @@ const Registration = () => {
             for their needs, taking into account factors such as price, features
             and support.
           </p>
-
-          <button className="bg-[#F84525] rounded text-white my-4  p-3">
+<div className="flex justify-center items-center text-center">
+          <button className="bg-[#F84525] rounded text-white my-4 sd:text-xs sd:p-2 p-3">
             View All Places
-          </button>
+          </button></div>
           <svg
             className="text-primary mt-4 d-none d-lg-block svg-responsive"
             width="200"
