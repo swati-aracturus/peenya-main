@@ -300,7 +300,7 @@ export const Add_listing = () => {
           <div className="lg:px-60 pm:px-3">
             <div className="px-20 flex flex-col justify-center items-center pm:px-10 ">
               <p className="text-red-500 text-[2.2rem] my-2 font-semibold pm:text-[15px] pm:mt-1">
-                Listing
+                Lisitng
               </p>
               <p className="text-[3rem] my-4 font-semibold pm:text-[30px] pm:mb-3">Add Listing</p>
               <p className="text-">
@@ -620,53 +620,48 @@ export const Add_listing = () => {
                     <label htmlFor="linkedin" className="block text-gray-700 mb-4">
                       Property amenities(optional)
                     </label>
-                    <div class="flex flex-wrap gap-5 ">
-                    <div class="flex items-center">
-                        <input id="garden" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
-                        <label for="garden" class="ml-2 block  text-gray-900">Garden</label>
+                    <div className="flex flex-wrap gap-5 ">
+                    <div className="flex items-center">
+                        <input id="garden" type="checkbox" className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
+                        <label for="garden" className="ml-2 block  text-gray-900">Garden</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="security-cameras-1" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
-                        <label for="security-cameras-1" class="ml-2 block  text-gray-900">Security cameras</label>
+                    <div className="flex items-center">
+                        <input id="security-cameras-1" type="checkbox" className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
+                        <label for="security-cameras-1" className="ml-2 block  text-gray-900">Security cameras</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="laundry" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
-                        <label for="laundry" class="ml-2 block  text-gray-900">Laundry</label>
+                    <div className="flex items-center">
+                        <input id="laundry" type="checkbox" className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
+                        <label for="laundry" className="ml-2 block  text-gray-900">Laundry</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="internet" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
-                        <label for="internet" class="ml-2 block  text-gray-900">Internet</label>
+                    <div className="flex items-center">
+                        <input id="internet" type="checkbox" className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
+                        <label for="internet" className="ml-2 block  text-gray-900">Internet</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="pool" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
-                        <label for="pool" class="ml-2 block  text-gray-900">Pool</label>
+                    <div className="flex items-center">
+                        <input id="pool" type="checkbox" className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
+                        <label for="pool" className="ml-2 block  text-gray-900">Pool</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="video-surveillance" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
-                        <label for="video-surveillance" class="ml-2 block  text-gray-900">Video surveillance</label>
+                    <div className="flex items-center">
+                        <input id="video-surveillance" type="checkbox" className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
+                        <label for="video-surveillance" className="ml-2 block  text-gray-900">Video surveillance</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="laundry-room" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
-                        <label for="laundry-room" class="ml-2 block  text-gray-900">Laundry room</label>
+                    <div className="flex items-center">
+                        <input id="laundry-room" type="checkbox" className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
+                        <label for="laundry-room" className="ml-2 block  text-gray-900">Laundry room</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="jacuzzi" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
-                        <label for="jacuzzi" class="ml-2 block  text-gray-900">Jacuzzi</label>
+                    <div className="flex items-center">
+                        <input id="jacuzzi" type="checkbox" className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
+                        <label for="jacuzzi" className="ml-2 block  text-gray-900">Jacuzzi</label>
                     </div>
-                    <div class="flex items-center">
-                        <input id="security-cameras-2" type="checkbox" class="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
-                        <label for="security-cameras-2" class="ml-2 block  text-gray-900">Security cameras</label>
+                    <div className="flex items-center">
+                        <input id="security-cameras-2" type="checkbox" className="h-4 w-4 text-indigo-600 border-gray-300 rounded focus:ring-indigo-500"/>
+                        <label for="security-cameras-2" className="ml-2 block  text-gray-900">Security cameras</label>
                     </div>
                 </div>
                   </div>
                 </form>
               </div>
             </div>
-
-
-
-
-
         <div className="bg-white p-6 rounded-3xl my-6">
               <div className="bg-[#f8f4f3] p-10 flex pm:flex-col justify-start items-center gap-4 rounded-lg">
                 <div className="flex justify-start gap-2">
@@ -691,8 +686,7 @@ export const Add_listing = () => {
                 </form>
               </div>
             </div>    
-
-
+              {/* 6th div */}
             <div className="bg-white p-6 rounded-3xl my-6">
             <div className="bg-[#f8f4f3] p-10 flex pm:flex-col justify-start items-center gap-4 rounded-lg">
                 <div className="flex justify-start gap-2">
@@ -711,7 +705,7 @@ export const Add_listing = () => {
                 </div>
               </div>
 
-              {/* 6th div */}
+            
               <div className="grid grid-cols-4 gap-5 my-5 pm:grid-cols-1">
                     <div>
                       <label htmlFor="title" className="block  text-gray-700 mb-2">
@@ -750,22 +744,21 @@ export const Add_listing = () => {
                       <label htmlFor="status" className="block   text-gray-700 mb-2">
                         Status
                       </label>
-                      <div className="w-10 h-10 bg-red-600 flex justify-center items-center rounded-xl cur"><i class="fa-solid fa-trash fa-lg text-white"></i></div>
+                      <div className="w-10 h-10 bg-red-600 flex justify-center items-center rounded-xl cur"><i className="fa-solid fa-trash fa-lg text-white"></i></div>
                     </div>
 
                   </div>
                   <div className="flex justify-center items-center mt-9"><button className="bg-gray-200 px-4 py-4 rounded-xl">+ Add New</button></div>
-
             </div>
 
 
 
           </div>
-        {/*   <div className="flex justify-center items-center mt-16"> <button className="bg-red-600 px-6 py-4 text-white rounded-xl">Submit for Approval  | →</button></div>
-     */}    </div>
+          <div className="flex justify-center items-center mt-16"> <button className="bg-red-600 px-6 py-4 text-white rounded-xl">Submit for Approval  | →</button></div>
+        </div>
       </div>
 
-{/* 
+
       <div className="bg-[#191e25] lg:px-40 pm:px-5 lg:pt-36 pm:pt-20 pb-2">
         <div className="bg-[#f84525] w-full lg:h-48 pm:h-[36rem] relative lg:px-32 pm:px-4 rounded-2xl pm:flex pm:flex-col pm:justify-start pm:items-center ">
           <img
@@ -783,13 +776,13 @@ export const Add_listing = () => {
           </div>
           <div className="lg:flex lg:absolute lg:right-20 gap-3 py-16 text-white ">
             <button className="w-48 h-16 border border-white rounded-lg flex px-4 py-2 items-center pm:mb-4">
-              <i class="fa-brands fa-apple text-3xl"></i>
+              <i className="fa-brands fa-apple text-3xl"></i>
               <p className="text-sm">
                 Available on the <span className="text-xl">App Store</span>
               </p>
             </button>
             <button className="w-48 h-16 border border-white rounded-lg flex px-4 py-2 items-center">
-              <i class="fa-brands fa-google-play text-3xl"></i>
+              <i className="fa-brands fa-google-play text-3xl"></i>
               <p className="text-sm">
                 Available on the <span className="text-xl">App Store</span>
               </p>
@@ -808,7 +801,7 @@ export const Add_listing = () => {
             </p>
             <div className="w-[25rem] h-32 border border-gray-700 rounded-2xl p-10 mb-8">
               <p className="text-xl text-gray-500 mb-2">Join our Whatapp:</p>
-              <i class="fa-brands fa-whatsapp text-2xl"> (123) 456-7890</i>
+              <i className="fa-brands fa-whatsapp text-2xl"> (123) 456-7890</i>
             </div>
             <h3 className="text-xl font-semibold lg:mb-8 pm:mb-1">
               Want to join ListOn? <br /> Write us !
@@ -823,11 +816,11 @@ export const Add_listing = () => {
             </p>
             <div className="flex flex-col ">
               <div>
-                <i class="fa-solid fa-phone text mr-2"> </i> (123) 456-7890
+                <i className="fa-solid fa-phone text mr-2"> </i> (123) 456-7890
               </div>{" "}
               <br />
               <div>
-                <i class="fa-solid fa-envelope text mr-2"> </i>
+                <i className="fa-solid fa-envelope text mr-2"> </i>
                 support@ListOn.com
               </div>
             </div>
@@ -855,19 +848,19 @@ export const Add_listing = () => {
               </h2>
               <div className="flex justify-start items-center gap-2">
                 <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i class="fa-brands fa-instagram fa-xl"></i>
+                  <i className="fa-brands fa-instagram fa-xl"></i>
                 </div>
                 <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i class="fa-brands fa-twitter fa-xl"></i>
+                  <i className="fa-brands fa-twitter fa-xl"></i>
                 </div>
                 <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i class="fa-brands fa-dribbble fa-xl"></i>
+                  <i className="fa-brands fa-dribbble fa-xl"></i>
                 </div>
                 <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i class="fa-brands fa-facebook-f fa-xl"></i>
+                  <i className="fa-brands fa-facebook-f fa-xl"></i>
                 </div>
                 <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i class="fa-brands fa-whatsapp fa-xl"></i>
+                  <i className="fa-brands fa-whatsapp fa-xl"></i>
                 </div>
               </div>
             </div>
@@ -890,7 +883,7 @@ export const Add_listing = () => {
             </div>
         </div>
       </div>
- */}
+
     </div>
   );
 };

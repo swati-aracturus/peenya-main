@@ -83,7 +83,7 @@ const Drop = () => {
                   type="date"
                   id="date"
                   placeholder=""
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -94,7 +94,7 @@ const Drop = () => {
                   type="datetime-local"
                   id="time"
                   placeholder=""
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -105,7 +105,7 @@ const Drop = () => {
                   type="text"
                   id="place"
                   placeholder="Place"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -116,7 +116,7 @@ const Drop = () => {
                   type="text"
                   id="Address"
                   placeholder="8709 herrickAve, Valley"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
             </div>
@@ -150,7 +150,7 @@ const Drop = () => {
                   type="date"
                   id="date"
                   placeholder=""
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -164,7 +164,7 @@ const Drop = () => {
                   type="text"
                   id="description"
                   placeholder=""
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -173,7 +173,7 @@ const Drop = () => {
                 </label>
                 <select
                   id="category"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 >
                   <option>Select Meal Type</option>
                   <option>Starter</option>
@@ -212,7 +212,7 @@ const Drop = () => {
                   type="text"
                   id="date"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -220,7 +220,7 @@ const Drop = () => {
                   type="text"
                   id="time"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -231,7 +231,7 @@ const Drop = () => {
                   type="text"
                   id="date"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -239,7 +239,7 @@ const Drop = () => {
                   type="text"
                   id="time"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -250,7 +250,7 @@ const Drop = () => {
                   type="text"
                   id="date"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -258,7 +258,7 @@ const Drop = () => {
                   type="text"
                   id="time"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -269,7 +269,7 @@ const Drop = () => {
                   type="text"
                   id="date"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -277,7 +277,7 @@ const Drop = () => {
                   type="text"
                   id="time"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -288,7 +288,7 @@ const Drop = () => {
                   type="text"
                   id="date"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -296,7 +296,7 @@ const Drop = () => {
                   type="text"
                   id="time"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -307,7 +307,7 @@ const Drop = () => {
                   type="text"
                   id="date"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -315,7 +315,7 @@ const Drop = () => {
                   type="text"
                   id="time"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -326,7 +326,7 @@ const Drop = () => {
                   type="text"
                   id="date"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
               <div>
@@ -334,7 +334,7 @@ const Drop = () => {
                   type="text"
                   id="time"
                   placeholder="Open"
-                  className="mt-1 block w-full border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
                 />
               </div>
             </div>

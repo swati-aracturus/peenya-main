@@ -1,183 +1,357 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import Sidebar from "./Sidebar";
 
-const Header = () => {
+const Header = ({ sidebarOpen, setSidebarOpen }) => {
   const [searchOpen, setSearchOpen] = useState(false);
+  const [Nav, setNav] = useState(false);
+  const [profile, setProfile] = useState(false);
+
+  // const [sidebarOpen, setSidebarOpen] = useState(true);
 
   return (
-    <header className="bg-white shadow-md p-4 flex flex-col lg:flex-row justify-between items-center lg:items-start">
-      <div className="flex items-center w-full lg:w-auto">
-        <button
-          className="lg:hidden text-gray-600 hover:text-gray-800"
-          onClick={() => document.getElementById('sidebarCollapse').click()}
-        >
-          <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-        </button>
-        <div className="text-lg font-semibold lg:ml-4">Dashboard</div>
-      </div>
-
-      <div className={`lg:flex flex-grow lg:items-center ${searchOpen ? 'block' : 'hidden'}`}>
-        <form className="relative flex-1" action="#" method="get">
-          <input
-            type="text"
-            className="w-full p-2 pl-10 border rounded-md border-gray-300 placeholder-gray-500"
-            placeholder="Search (Ctrl+/)"
-            onFocus={() => setSearchOpen(true)}
-            onBlur={() => setSearchOpen(false)}
-          />
+    <>
+      <div className="bg-[#f8f4f3] container mx-auto px-4 py-4 flex justify-start items-center  pm:hidden ">
+        <div className="flex items-center">
           <button
-            type="submit"
-            className="absolute top-1/2 left-2 transform -translate-y-1/2 text-gray-500"
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="text-gray-400 focus:outline-none  bg-[#f84525] px-3 py-3 rounded-full"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
             </svg>
           </button>
-          <span className="absolute top-1/2 right-2 transform -translate-y-1/2 text-gray-500">(Ctrl+/)</span>
-        </form>
+        </div>
+        <div className="relative lg:flex lg:items-center pm:hidden">
+          <form
+            className={`relative ${searchOpen ? "block" : "hidden"} lg:block`}
+            onFocus={() => setSearchOpen(true)}
+            onBlur={() => setSearchOpen(false)}
+          >
+            <input
+              type="text"
+              className={`${sidebarOpen ? 'w-60' : 'w-68'} border rounded-lg py-2 px-4    ml-6`}
+              placeholder="Search (Ctrl+/)"
+            />
+          </form>
+          <nav className={`${sidebarOpen ? 'ml-4' : 'ml-28'} hidden lg:flex lg:items-center pm:hidden`}>
+          <div className="nav-btn">
+              <div className="nav-links">
+                <ul>
+                  <li className="nav-link">
+                    <a href="#">Home</a>
+                  </li>
+                  <li className="nav-link">
+                    <a href="#">
+                      Dashboard<i className="fas fa-caret-down"></i>
+                    </a>
+                    <div className="dropdown">
+                      <ul>
+                        <li className="dropdown-link">
+                          <a href="#">Link 1</a>
+                        </li>
+                        <li className="dropdown-link">
+                          <a href="#">Link 2</a>
+                        </li>
+                        <li className="dropdown-link">
+                          <a href="#">
+                            Link 3<i className="fas fa-caret-down"></i>
+                          </a>
+                          <div className="dropdown second">
+                            <ul>
+                              <li className="dropdown-link">
+                                <a href="#">Link 1</a>
+                              </li>
+                              <li className="dropdown-link">
+                                <a href="#">Link 2</a>
+                              </li>
+                              <li className="dropdown-link">
+                                <a href="#">Link 3</a>
+                              </li>
+                              <li className="dropdown-link">
+                                <a href="#">
+                                  More<i className="fas fa-caret-down"></i>
+                                </a>
+                                <div className="dropdown second">
+                                  <ul>
+                                    <li className="dropdown-link">
+                                      <a href="#">Link 1</a>
+                                    </li>
+                                    <li className="dropdown-link">
+                                      <a href="#">Link 2</a>
+                                    </li>
+                                    <li className="dropdown-link">
+                                      <a href="#">Link 3</a>
+                                    </li>
+                                    <div className="arrow"></div>
+                                  </ul>
+                                </div>
+                              </li>
+                              <div className="arrow"></div>
+                            </ul>
+                          </div>
+                        </li>
+                        <li className="dropdown-link">
+                          <a href="#">Link 4</a>
+                        </li>
+                        <div className="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="nav-link">
+                    <a href="#">
+                      Listing<i className="fas fa-caret-down"></i>
+                    </a>
+                    <div className="dropdown">
+                      <ul>
+                        <li className="dropdown-link">
+                          <a href="#">Link 1</a>
+                        </li>
+                        <li className="dropdown-link">
+                          <a href="#">Link 2</a>
+                        </li>
+                        <li className="dropdown-link">
+                          <a href="#">
+                            Link 3<i className="fas fa-caret-down"></i>
+                          </a>
+                          <div className="dropdown second">
+                            <ul>
+                              <li className="dropdown-link">
+                                <a href="#">Link 1</a>
+                              </li>
+                              <li className="dropdown-link">
+                                <a href="#">Link 2</a>
+                              </li>
+                              <li className="dropdown-link">
+                                <a href="#">Link 3</a>
+                              </li>
+                              <li className="dropdown-link">
+                                <a href="#">
+                                  More<i className="fas fa-caret-down"></i>
+                                </a>
+                                <div className="dropdown second">
+                                  <ul>
+                                    <li className="dropdown-link">
+                                      <a href="#">Link 1</a>
+                                    </li>
+                                    <li className="dropdown-link">
+                                      <a href="#">Link 2</a>
+                                    </li>
+                                    <li className="dropdown-link">
+                                      <a href="#">Link 3</a>
+                                    </li>
+                                    <div className="arrow"></div>
+                                  </ul>
+                                </div>
+                              </li>
+                              <div className="arrow"></div>
+                            </ul>
+                          </div>
+                        </li>
+                        <li className="dropdown-link">
+                          <a href="#">Link 4</a>
+                        </li>
+                        <div className="arrow"></div>
+                      </ul>
+                    </div>
+                  </li>
+                  <li className="nav-link">
+                    <a href="#">Explore</a>
+                  </li>
+                  <li className="nav-link">
+                    <a href="#">Template</a>
+                  </li>
+                  <li className="nav-link">
+                    <a href="#">About</a>
+                  </li>
+                </ul>
+              </div>
+              
+            </div>
 
-        <nav className="mt-4 lg:mt-0 lg:ml-6">
-          <ul className="flex flex-col lg:flex-row space-y-2 lg:space-y-0 lg:space-x-4">
-            <li className="relative group">
-              <a
-                href="#"
-                className="text-gray-600 hover:text-gray-800 flex items-center space-x-1"
+            <div className={`${sidebarOpen ? 'ml-0' : 'ml-28' } bg-white px-4 py-3 rounded-lg`}>
+              <i className="fa-regular fa-square fa-lg"></i>
+            </div>
+            <div className="ml-2 bg-white px-4 py-3 rounded-lg">
+              <i className="fa-solid fa-moon fa-lg"></i>
+            </div>
+            <div className="flex justify-start items-center ml-2">
+              <div className=" rounded-full w-10 h-10">
+                <img src="/acc.png" className="w-full"></img>
+              </div>
+              <p className="text-sm">
+                Naeem Khan <br />{" "}
+                <span className="text-xs text-gray-500">example@gmail.com</span>
+              </p>
+            </div>
+          </nav>
+          
+        </div>
+      </div>
+
+      <div
+        className={`${
+          sidebarOpen && "pm:inset-0 pm:bg-black pm:bg-opacity-50 pm:z-0"
+        } bg-[#f8f4f3] flex h-20 p-3 ml-28 lg:hidden pm:w-full`}
+      >
+        <nav className="flex justify-between items-center w-full ">
+          <button
+            onClick={() => setSidebarOpen(!sidebarOpen)}
+            className="text-gray-400 focus:outline-none  bg-[#f84525] px-2 rounded-full w-10 h-10"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-6 w-6 text-white"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+          <div className="flex justify-center items-center list-none gap-2">
+            {/* <li>wefsdf</li>
+            <li>dsfdsf</li>
+            <li>dfsd</li>
+            <li>dfsdf</li> */}
+            <div className="ml-40 bg-white px-4 py-3 rounded-lg">
+              <i className="fa-regular fa-square fa-lg"></i>
+            </div>
+            <div className="ml-2 bg-white px-4 py-3 rounded-lg">
+              <i className="fa-solid fa-moon fa-lg"></i>
+            </div>
+            <div className="flex justify-start items-center ml-2">
+              <div className=" rounded-full w-10 h-10">
+                <img src="/acc.png" className="w-full" onClick={() => setProfile(!profile)}></img>
+              </div>
+              {/* <p className="text-sm">
+                Naeem Khan <br />{" "}
+                <span className="text-xs text-gray-500">example@gmail.com</span>
+              </p> */}
+            </div>
+            <div className="flex jus items-center">
+              {" "}
+              <button
+                className="text-gray-400 focus:outline-none  bg-white px-2 rounded-full w-9 h-9 relative"
               >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M3 7h18M3 12h18m-7 5h7" />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  className="h-6 w-6"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  onClick={() => setNav(!Nav)}
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
+                    d="M4 6h16M4 12h16M4 18h16"
+                  />
                 </svg>
-                <span>Home</span>
-              </a>
-              <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <li><a className="dropdown-item" href="../index.html">Home (Main)</a></li>
-                <li><a className="dropdown-item" href="../home-classic.html">Home (Classic)</a></li>
-                <li><a className="dropdown-item" href="../home-rounded.html">Home (Rounded)</a></li>
-                <li><a className="dropdown-item" href="../home-map.html">Home (Map)</a></li>
-                <li><a className="dropdown-item" href="../home-grid.html">Home (Grid)</a></li>
-                <li><a className="dropdown-item" href="../home-waves.html">Home (Waves)</a></li>
-                <li><a className="dropdown-item" href="../home-car.html">Home (Car)&nbsp;<span className="badge text-bg-primary fw-semibold">New</span></a></li>
-              </ul>
-            </li>
-
-            <li className="relative group">
-              <a
-                href="#"
-                className="text-gray-600 hover:text-gray-800 flex items-center space-x-1"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 10l5 5m0 0l-5 5m5-5H3" />
-                </svg>
-                <span>Dashboard</span>
-              </a>
-              <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <li><a className="dropdown-item" href="dashboard.html">Dashboard</a></li>
-                <li><a className="dropdown-item" href="bookings.html">Bookings</a></li>
-                <li><a className="dropdown-item" href="messages.html">Message</a></li>
-                <li><a className="dropdown-item" href="wallet.html">Wallet</a></li>
-                <li><a className="dropdown-item" href="profile.html">Edit Profile</a></li>
-                <li><a className="dropdown-item" href="add-listing.html">Add listing</a></li>
-                <li><a className="dropdown-item" href="my-listing.html">My listing</a></li>
-                <li><a className="dropdown-item" href="bookings.html">Bookings</a></li>
-                <li><a className="dropdown-item" href="reviews.html">Reviews</a></li>
-                <li><a className="dropdown-item" href="bookmark.html">Bookmark</a></li>
-                <li><a className="dropdown-item" href="setting-app.html">Settings</a></li>
-              </ul>
-            </li>
-
-            <li className="relative group">
-              <a
-                href="#"
-                className="text-gray-600 hover:text-gray-800 flex items-center space-x-1"
-              >
-                <span>Listing</span>
-              </a>
-              <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <li className="relative group">
-                  <a className="dropdown-item dropdown-toggle" href="#">List View</a>
-                  <ul className="absolute left-48 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <li><a className="dropdown-item" href="../listings-list-left.html">Left Sidebar</a></li>
-                    <li><a className="dropdown-item" href="../listings-list-right.html">Right Sidebar</a></li>
-                  </ul>
-                </li>
-                <li className="relative group">
-                  <a className="dropdown-item dropdown-toggle" href="#">Grid View 1</a>
-                  <ul className="absolute left-48 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <li><a className="dropdown-item" href="../listings-grid-1-left.html">Left Sidebar</a></li>
-                    <li><a className="dropdown-item" href="../listings-grid-1-right.html">Right Sidebar</a></li>
-                  </ul>
-                </li>
-                <li className="relative group">
-                  <a className="dropdown-item dropdown-toggle" href="#">Grid View 2</a>
-                  <ul className="absolute left-48 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <li><a className="dropdown-item" href="../listings-grid-2-left.html">Left Sidebar</a></li>
-                    <li><a className="dropdown-item" href="../listings-grid-2-right.html">Right Sidebar</a></li
-                    </ul>
-                </li>
-                <li className="relative group">
-                  <a className="dropdown-item dropdown-toggle" href="#">Half Map + Sidebar</a>
-                  <ul className="absolute left-48 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <li><a className="dropdown-item" href="../listings-map.html">Half Map List</a></li>
-                    <li><a className="dropdown-item" href="../listings-map-car.html">Half Map List (Car)&nbsp;<span className="badge text-bg-primary fw-semibold">New</span></a></li>
-                    <li><a className="dropdown-item" href="../listings-map-grid-1.html">Half Map Grid 1</a></li>
-                    <li><a className="dropdown-item" href="../listings-map-grid-2.html">Half Map Grid 2</a></li>
-                  </ul>
-                </li>
-                <li className="relative group">
-                  <a className="dropdown-item dropdown-toggle" href="#">Listing Details</a>
-                  <ul className="absolute left-48 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <li><a className="dropdown-item" href="../listing-details.html">Listing Details 1</a></li>
-                    <li><a className="dropdown-item" href="../listing-details-2.html">Listing Details 2</a></li>
-                    <li><a className="dropdown-item" href="../listing-details-car.html">Listing Details Car&nbsp;<span className="badge text-bg-primary fw-semibold">New</span></a></li>
-                  </ul>
-                </li>
-              </ul>
-            </li>
-
-            <li className="relative group">
-              <a
-                href="#"
-                className="text-gray-600 hover:text-gray-800 flex items-center space-x-1"
-              >
-                <span>Template</span>
-              </a>
-              <ul className="absolute left-0 mt-2 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                <li className="relative group">
-                  <a className="dropdown-item dropdown-toggle" href="#">About</a>
-                  <ul className="absolute left-48 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <li><a className="dropdown-item" href="../about.html">About us 1</a></li>
-                    <li><a className="dropdown-item" href="../about-2.html">About us 2</a></li>
-                  </ul>
-                </li>
-                <li className="relative group">
-                  <a className="dropdown-item dropdown-toggle" href="#">Agent</a>
-                  <ul className="absolute left-48 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <li><a className="dropdown-item" href="../agent.html">Agent</a></li>
-                    <li><a className="dropdown-item" href="../agent-details.html">Agent Details</a></li>
-                  </ul>
-                </li>
-                <li className="relative group">
-                  <a className="dropdown-item dropdown-toggle" href="#">Blog</a>
-                  <ul className="absolute left-48 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    <li><a className="dropdown-item" href="../blog.html">Blog</a></li>
-                    <li><a className="dropdown-item" href="../blog-details.html">Blog Details</a></li>
-                  </ul>
-                </li>
-                <li><a className="dropdown-item" href="../add-listing.html">Add Listing</a></li>
-                <li><a className="dropdown-item" href="../contact.html">Contact</a></li>
-                <li><a className="dropdown-item" href="../pricing.html">Pricing</a></li>
-                <li className="relative group">
-                  <a className="dropdown-item dropdown-toggle" href="#">Authentication</a>
-                  <ul className="absolute left-48 mt-0 w-48 bg-white shadow-lg rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {/* Add authentication-related links here */}
-                  </ul>
-                </li>
-              </ul>
-            </li>
-          </ul>
+              </button>
+            </div>
+          </div>
         </nav>
       </div>
-    </header>
+
+     
+     {Nav  && 
+
+     
+      <div className=" relative border-2 shadow-lg">
+
+        <ul className=" ml-40 flex flex-col gap-3 w-[80%] py-3  bg-white text-black px-2 rounded-lg ">
+        <button className="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 lg:hidden absolute top-1 "
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            onClick={() => setNav(false)}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+          <li className="bg-gray-300 px-4 py-1 rounded-lg mt-2">Home</li>
+          <li className="bg-gray-300 px-4 py-1 rounded-lg">Dashboard</li>
+          <li className="bg-gray-300 px-4 py-1 rounded-lg">Listing</li>
+          <li className="bg-gray-300 px-4 py-1 rounded-lg">Explore</li>
+          <li className="bg-gray-300 px-4 py-1 rounded-lg">Template</li>
+        </ul>
+      </div>
+      
+      }
+
+
+{profile  && 
+<div className="bg-white w-[65%] ml-40 p-4 rounded-xl border-2 shadow-lg relative">
+
+ <div className="flex justify-center items-center ">
+ <button className="">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            className="h-6 w-6 lg:hidden absolute top-3 right-3"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke="currentColor"
+            onClick={() => setProfile(false)}
+          >
+            <path
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+        </button>
+      <div className="flex flex-col justify-center items-center">
+        <img src="/acc.png" className="w-20"></img>
+        <h1>Naeem Khan </h1>
+        <p>example@gmail.com</p>
+      </div>
+      
+ </div>
+
+ <div className="mt-8">
+      <div className="flex justify-start items-center ml-3 mt-2 text-gray-500 gap-3 mb-2"><i class="fa-solid fa-user"></i><p>My Profile</p></div>
+      <hr/>
+      <div className="flex justify-start items-center ml-3 mt-2 text-gray-500 gap-3 mb-2"><i class="fa-solid fa-pen"></i><p>Edit Profile</p></div>
+      <hr/>
+      <div className="flex justify-start items-center ml-3 mt-2 text-gray-500 gap-3 mb-2"><i class="fa-solid fa-arrow-down-up-across-line"></i><p>Activity Logs</p></div>
+      <hr/>
+      <div className="flex justify-start items-center ml-3 mt-2 text-gray-500 gap-3 mb-2"><i className="fa-solid fa-gear "></i><p>Account Settings</p></div>
+      <hr/>
+      <div className="flex justify-start items-center ml-3 mt-2 text-gray-500 gap-3 mb-2  "><i className="fa-solid fa-right-from-bracket "></i><p>Sign out</p></div>
+ </div>
+
+</div>
+
+
+}
+      <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
+    </>
   );
 };
 
