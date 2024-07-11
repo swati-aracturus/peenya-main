@@ -28,152 +28,97 @@ const Registration = () => {
   };
 
   const cards = Array.from({ length: 5 }, (_, index) => (
-    <div key={index} className="card mr-10 flex p-0  sd:flex-wrap">
-      <img
-        alt="ecommerce"
-        className="lg:w-1/2  lg:h-auto h-64 object-cover object-center rounded"
-        src="https://stackdiary.com/140x100.png"
-      />
-
-      <div className=" w-full mt-6  ml-4">
-        <div className="flex justify-between items-center">
-          <div className="align-items-center d-flex flex-wrap gap-1 text-primary text-start text-red-500 card-start mb-2">
-            <i className="fa-solid fa-star"></i>
-            <span className="fw-medium text-primary">
-              <span className="text-xl ml-1 mr-1">(4.5)</span>2,391 reviews
-            </span>
-          </div>
-          <div className="flex justify-start items-center mr-6 ">
-            <a
-              href=""
-              className=" mr-2 btn-icon  shadow-md p-2 flex align-center justify-center text-primary bg-white rounded-circle"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="Bookmark"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="currentColor"
-                className="bi bi-heart"
-                viewBox="0 0 16 16"
-              >
-                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
-              </svg>
-            </a>
-            <a
-              href=""
-              className="btn-icon shadow-md p-2 flex align-center justify-center text-primary bg-white rounded-circle"
-              data-bs-toggle="tooltip"
-              data-bs-placement="top"
-              data-bs-title="Quick View"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="20"
-                height="20"
-                fill="currentColor"
-                className="bi bi-search"
-                viewBox="0 0 16 16"
-              >
-                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
-              </svg>
-            </a>
-          </div>
+    <div key={index} className="card mr-10 pm:mx-4 flex p-0 pm:flex-wrap">
+    <img
+      alt="ecommerce"
+      className="w-full h-64 object-cover object-center rounded lg:w-1/2 lg:h-auto"
+      src="https://stackdiary.com/140x100.png"
+    />
+    <div className="w-full mt-6 ml-4 ps:ml-0">
+      <div className="flex justify-between items-center">
+        <div className="align-items-center d-flex flex-wrap gap-1 text-primary text-justify text-red-500 card-justify mb-2">
+          <i className="fa-solid fa-star pm:text-sm"></i>
+          <span className="fw-medium text-primary pm:text-sm">
+            <span className="text-xl mx-1 pm:text-sm">(4.5)</span>2,391 reviews
+          </span>
         </div>
-
-        <h1 className="text-gray-900 text-2xl title-font font-medium mb-1  text-start">
-          Green mart Apartments
-        </h1>
-        {/* <div className="flex mb-4">
-              <span className="flex items-center">
-                {[...Array(4)].map((_, i) => (
-                  <svg
-                    key={i}
-                    fill="currentColor"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 text-indigo-500"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                  </svg>
-                ))}
-                <svg
-                  fill="none"
-                  stroke="currentColor"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth="2"
-                  className="w-4 h-4 text-indigo-500"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
-                </svg>
-                <span className="text-gray-600 ml-3">20 Reviews</span>
-              </span>
-              <span className="flex ml-3 pl-3 py-2 border-l-2 border-gray-200 space-x-2s">
-                {[
-                  "M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z",
-                  "M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z",
-                  "M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z",
-                ].map((path, i) => (
-                  <a key={i} className="text-gray-500">
-                    <svg
-                      fill="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2"
-                      className="w-5 h-5"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d={path}></path>
-                    </svg>
-                  </a>
-                ))}
-              </span>
-            </div> */}
-        <p className="leading-relaxed text-start">
-          Dui urna vehicula tincidunt pretium consequat luctus mi, platea
-          fermentum conubia tempus ac orci.{" "}
-        </p>
-        <div className="flex mt-9 justify-start items-center gap-4">
+        <div className="flex justify-justify items-center mr-6">
           <a
-            href="tel:+4733378901"
-            className="flex gap-2 items-center fs-13 fw-semibold"
+            href=""
+            className="mr-2 btn-icon shadow-md p-2 flex align-center justify-center bg-white rounded-circle"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="Bookmark"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="15"
-              height="15"
-              fill="#9b9b9b"
-              className="bi bi-telephone"
+              width="20"
+              height="20"
+              fill="currentColor"
+              className="bi bi-heart"
               viewBox="0 0 16 16"
             >
-              <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+              <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
             </svg>
-            <span>(123) 456-7890</span>
           </a>
-          <a href="#" className="flex gap-2 items-center fs-13 fw-semibold">
+          <a
+            href=""
+            className="btn-icon shadow-md p-2 flex align-center justify-center text-primary bg-white rounded-circle"
+            data-bs-toggle="tooltip"
+            data-bs-placement="top"
+            data-bs-title="Quick View"
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
-              fill="#9b9b9b"
-              className="bi bi-compass"
+              width="20"
+              height="20"
+              fill="currentColor"
+              className="bi bi-search"
               viewBox="0 0 16 16"
             >
-              <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-              <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
+              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
             </svg>
-            <span>Directions</span>
           </a>
         </div>
       </div>
+<div className="pm:mx-4">      <h1 className="text-gray-900 text-2xl pm:text-lg title-font font-medium mb-1 mt-4 text-justify">
+        Green Mart Apartments
+      </h1>
+      <p className="leading-relaxed pm:text-sm text-justify">
+        Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci.
+      </p></div>
+      <div className="flex mt-9 pm:mt-4 pm:mb-10 justify-justify items-center gap-4">
+        <a href="tel:+4733378901" className="flex gap-2 items-center fs-13 fw-semibold">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="15"
+            height="15"
+            fill="#9b9b9b"
+            className="bi bi-telephone"
+            viewBox="0 0 16 16"
+          >
+            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
+          </svg>
+          <span className="leading-relaxed pm:text-[12px] text-justify">(123) 456-7890</span>
+        </a>
+        <a href="#" className="flex gap-2 items-center fs-13 fw-semibold">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="#9b9b9b"
+            className="bi bi-compass"
+            viewBox="0 0 16 16"
+          >
+            <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+            <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
+          </svg>
+          <span className="leading-relaxed pm:text-[12px] text-justify">Directions</span>
+        </a>
+      </div>
     </div>
+  </div>
+  
   ));
   return (
     <>
@@ -181,17 +126,17 @@ const Registration = () => {
       <div className="bg-[#191e25] from-gray-900 to-black">
         <div className="flex justify-center ">
           <div
-            className="pt-[10%] ps:pt-[20%] aos-init aos-animate"
+            className="pt-[10%] pm:pt-[20%] aos-init aos-animate"
             data-aos="fade-down"
             data-aos-delay="400"
           >
-            <p className="text-center text-4xl ps:text-lg text-[#F84525]">
+            <p className="text-center text-4xlpm:text-lg text-[#F84525]">
               Categories
             </p>
-            <h1 className="text-5xl text-white font-semibold sd:text-2xl text-center pt-4 pb-0 sd:pb-2 sd:leading-3">
+            <h1 className="text-5xl text-white font-semibold pm:text-2xl text-center pt-4 pb-0 pm:pb-2 pm:leading-3">
               Featured Categories
             </h1>
-            <p className="text-center text-white text-lg font-medium py-6 sd:pt-1 sd:text-xs">
+            <p className="text-center text-white text-lg font-medium py-6 pm:pt-1 pm:text-xs">
               Discover exciting categories.{" "}
               <span className="text-[#F84525]">
                 Find what you’re looking for
@@ -199,8 +144,8 @@ const Registration = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-wrap w-[85%] sd:w-[95%] mx-auto pt-[5%] ">
-          <div className="w-1/3 sd:w-full px-2 mb-4">
+        <div className="flex flex-wrap w-[85%] pm:w-[95%] mx-auto pt-[5%] ">
+          <div className="w-1/3 pm:w-full px-2 mb-4">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -215,7 +160,7 @@ const Registration = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 sd:w-full px-2 mb-4">
+          <div className="w-1/3 pm:w-full px-2 mb-4">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -230,7 +175,7 @@ const Registration = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 sd:w-full px-2 mb-4">
+          <div className="w-1/3 pm:w-full px-2 mb-4">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -246,8 +191,8 @@ const Registration = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap w-[85%] sd:w-[95%] mx-auto pb-[2%]">
-          <div className="w-1/3 sd:w-full px-2 mb-4">
+        <div className="flex flex-wrap w-[85%] pm:w-[95%] mx-auto pb-[2%]">
+          <div className="w-1/3 pm:w-full px-2 mb-4">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -262,7 +207,7 @@ const Registration = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 sd:w-full px-2 mb-4">
+          <div className="w-1/3 pm:w-full px-2 mb-4">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -277,7 +222,7 @@ const Registration = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 sd:w-full px-2 mb-4">
+          <div className="w-1/3 pm:w-full px-2 mb-4">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -296,14 +241,14 @@ const Registration = () => {
       </div>
 
       <div className="flex justify-center ">
-        <div className="pt-[5%] sd:pt-[20%]">
-          <p className="text-center text-4xl sd:text-lg text-[#F84525]">
+        <div className="pt-[5%] pm:pt-[20%]">
+          <p className="text-center text-4xl pm:text-lg text-[#F84525]">
             Best Way
           </p>
-          <h1 className="text-5xl font-semibold w-4/5 mx-auto sd:text-2xl text-center pt-4 sd:pt-1 sd:leading-7">
+          <h1 className="text-5xl font-semibold w-4/5 mx-auto pm:text-4xl text-center pt-4 pm:pt-1 pm:leading-10">
             Find Your Dream Place The Best Way
           </h1>
-          <p className="text-center mx-auto text-lg font-medium py-6 sd:pt-2 sd:text-sm sd:w-[80%]">
+          <p className="text-center mx-auto text-lg font-medium py-6 pm:pt-2 pm:text-sm pm:w-[80%]">
             Discover exciting categories.{" "}
             <span className="text-[#F84525]">Find what you’re looking for</span>{" "}
           </p>
@@ -311,68 +256,68 @@ const Registration = () => {
       </div>
 
       <div className="bg-no-repeat numbers-wrapper pb-[5%]">
-        <div className="row g-4 sd:pb-[3%]">
-          <div className="col-md-4 sd:my-[5%]">
+        <div className="row g-4 pm:pb-[3%]">
+          <div className="col-md-4 pm:my-[5%]">
             <div
               className="mx-xl-4 number-wrap text-center aos-init aos-animate"
               data-aos="fade"
               data-aos-delay="400"
             >
               <div
-                className="align-items-center bg-primary text-[40px] d-flex font-caveat sd:w-[80px] sd:h-[80px] w-[100px] h-[100px] fs-1 
+                className="align-items-center bg-primary text-[40px] d-flex font-caveat pm:w-[80px] pm:h-[80px] w-[100px] h-[100px] fs-1 
                             justify-content-center mb-4 mx-auto number-circle rounded-circle text-white "
               >
                 {" "}
-                <div className="translate-y-4 sd:translate-y-2">1</div>
+                <div className="translate-y-4 pm:translate-y-2">1</div>
               </div>
-              <h4 className="sd:w-[80%] font-semibold sd:mx-auto">
+              <h4 className="pm:w-[80%] font-semibold pm:mx-auto">
                 Input your location to start looking for landmarks.
               </h4>
-              <p className="fs-15 sd:px-2 sd:mx-auto m-0 opacity-75">
+              <p className="fs-15 pm:px-2 pm:mx-auto m-0 opacity-75">
                 orem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra
                 vitae quam integer semper.
               </p>
             </div>
           </div>
-          <div className="col-md-4 mt-[4%] sd:my-[5%]">
+          <div className="col-md-4 mt-[4%] pm:my-[5%]">
             <div
               className="mx-xl-4 number-wrap text-center second aos-init aos-animate"
               data-aos="fade"
               data-aos-delay="700"
             >
               <div
-                className="align-items-center bg-primary text-[40px] d-flex font-caveat sd:w-[80px] sd:h-[80px] w-[100px] h-[100px] fs-1 
+                className="align-items-center bg-primary text-[40px] d-flex font-caveat pm:w-[80px] pm:h-[80px] w-[100px] h-[100px] fs-1 
                             justify-content-center mb-4 mx-auto number-circle rounded-circle text-white"
               >
                 {" "}
-                <div className="translate-y-4 sd:translate-y-2">2</div>
+                <div className="translate-y-4 pm:translate-y-2">2</div>
               </div>
-              <h4 className="sd:w-[90%] font-semibold sd:mx-auto">
+              <h4 className="pm:w-[90%] font-semibold pm:mx-auto">
                 Make an appointment at the place you want to visit.
               </h4>
-              <p className="fs-15 m-0 sd:px-2 opacity-75">
+              <p className="fs-15 m-0 pm:px-2 opacity-75">
                 orem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra
                 vitae quam integer.
               </p>
             </div>
           </div>
-          <div className="col-md-4 sd:my-[5%]">
+          <div className="col-md-4 pm:my-[5%]">
             <div
               className="mx-xl-4 number-wrap text-center aos-init aos-animate"
               data-aos="fade"
               data-aos-delay="1000"
             >
               <div
-                className="align-items-center bg-primary d-flex text-[40px] font-caveat sd:w-[80px] sd:h-[80px] w-[100px] h-[100px] fs-1 
+                className="align-items-center bg-primary d-flex text-[40px] font-caveat pm:w-[80px] pm:h-[80px] w-[100px] h-[100px] fs-1 
                             justify-content-center mb-4 mx-auto number-circle rounded-circle text-white"
               >
                 {" "}
-                <div className="translate-y-4 sd:translate-y-2">3</div>
+                <div className="translate-y-4 pm:translate-y-2">3</div>
               </div>
-              <h4 className="sd:w-[90%] font-semibold sd:mx-auto">
+              <h4 className="pm:w-[90%] font-semibold pm:mx-auto">
                 Visit the place and enjoy the experience.
               </h4>
-              <p className="fs-15 m-0 sd:px-2 opacity-75">
+              <p className="fs-15 m-0 pm:px-2 opacity-75">
                 orem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra
                 vitae quam integer aenean.
               </p>
@@ -384,30 +329,30 @@ const Registration = () => {
       <div className="bg-[#F84525]">
         <div className="flex justify-center pb-12 ">
           <div
-            className="pt-[10%] ps:pt-[20%] aos-init aos-animate w-full"
+            className="pt-[10%] pm:pt-[20%] aos-init aos-animate w-full"
             data-aos="fade-down"
             data-aos-delay="400"
           >
-            <p className="text-center text-4xl ps:text-lg text-white ">
+            <p className="text-center text-4xl pm:text-lg text-white ">
               Top Regions
             </p>
-            <h1 className="text-5xl text-white font-semibold sd:text-2xl text-center pt-4 pb-0 sd:pb-2 sd:leading-3">
+            <h1 className="text-5xl text-white font-semibold pm:text-2xl text-center pt-4 pb-0 pm:pb-2 pm:leading-3">
               Explore Cities
             </h1>
-            <p className="text-center text-white text-md font-medium py-6 sd:pt-1 sd:text-xs">
+            <p className="text-center text-white text-md font-medium py-6 pm:pt-1 pm:text-xs">
               Discover exciting categories.{" "}
               <span className="text-white ">Find what you’re looking for</span>{" "}
             </p>
 
             <CardSwiper />
 
-            <div className="flex sd:flex-wrap justify-center align-center w-full sd:px-0 px-16">
-              <div className="w-1/2 sd:w-full">
-                <h1 className="pl-[10%] sd:px-4 py-6 sd:text-2xl text-[50px] justify-center text-white">
+            <div className="flex pm:flex-wrap justify-center align-center w-full pm:px-0 px-16">
+              <div className="w-1/2 pm:w-full">
+                <h1 className="pl-[10%] pm:px-4 py-6 pm:text-2xl text-[50px] justify-center text-white">
                   Find your perfect Place based on your interest
                 </h1>
                 <img
-                  className="px-[5%] pb-[10%]  rounded-t-[10%] rounded-b-[100px] sd:rounded-b-[50px] "
+                  className="px-[5%] rounded-[10%] "
                   alt="book"
                   src="https://dummyimage.com/600x350/000/fff"
                 />
@@ -415,16 +360,16 @@ const Registration = () => {
 
 
 
-              <div className="w-1/2 sd:w-full flex justify-center items-center">
+              <div className="w-1/2 pm:w-full flex justify-center items-center">
               <div>
-                <p className="mb-2 text-xl sd:text-sm px-[10%] pt-[5%] text-white">
+                <p className="mb-2 text-xl pm:text-sm px-[10%] pt-[5%] text-white">
                   Want to have a fantastic travel experience? Let us connect you
                   with diverse categories of businesses, public spots, and
                   famous landmarks so that you can create unforgettable
                   memories.
                 </p>
-                <ul className="list-disc sd:text-sm mx-4 text-xl text-white pl-[10%] pr-[25%] sd:pr-[5%]">
-                  <li className="mb-2 py-2 sd:py-0 ">
+                <ul className="list-disc pm:text-sm mx-4 text-xl text-white pl-[10%] pr-[25%] pm:pr-[5%]">
+                  <li className="mb-2 py-2 pm:py-0 ">
                     Find popular businesses and important sites near you.
                   </li>
                   <li className="mb-2 py-2">
@@ -446,20 +391,20 @@ const Registration = () => {
         </div>
       </div>
 
-      <div className="flex sd:flex-wrap justify-center align-center w-full py-[5%]  mx-auto">
-        <div className="w-[35%] sd:w-full pl-[10%] sd:px-[5%] py-6">
-          <p className=" text-4xl ps:text-lg text-[#F84525] sd:text-center">Places</p>
-          <h1 className="text-5xl font-medium sd:text-2xl sd:text-center pt-4 sd:pt-1 sd:leading-6 pb-0 sd:pb-2 ">
+      <div className="flex pm:flex-wrap justify-center align-center w-full py-[5%]  mx-auto">
+        <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] py-6">
+          <p className=" text-4xlpm:text-lg text-[#F84525] pm:text-center">Places</p>
+          <h1 className="text-5xl font-medium pm:text-2xl pm:text-center pt-4 pm:pt-1 pm:leading-6 pb-0 pm:pb-2 ">
             Discover Your Favourite Place
           </h1>
-          <p className="text-justify text-md  py-6 sd:pt-1 sd:text-xs">
+          <p className="text-justify text-md  py-6 pm:pt-1 pm:text-xs">
             Our publications can provide quality and useful tips and advice for
             companies on how to evaluate SaaS providers and choose the best one
             for their needs, taking into account factors such as price, features
             and support.
           </p>
 <div className="flex justify-center items-center text-center">
-          <button className="bg-[#F84525] rounded text-white my-4 sd:text-xs sd:p-2 p-3">
+          <button className="bg-[#F84525] rounded text-white my-4 pm:text-xs pm:p-2 p-3">
             View All Places
           </button></div>
           <svg
@@ -476,7 +421,7 @@ const Registration = () => {
             ></path>
           </svg>
         </div>
-        <div className="w-[60%] sd:w-full  pl-[4%] ">
+        <div className="w-[60%] pm:w-[100%] pm:pl-0 pl-[4%] ">
           <div className="">{cards}</div>
         </div>
       </div>
