@@ -146,8 +146,8 @@ export const Dashboard = () => {
   };
 
   return (
-    <div className={`${isOpen ? "ml-[20.5rem] pm:ml-0 " : "ml-[5.7rem] pm:ml-0 "} bg-[#f8f4f3] pb-6 z-0 `}>
-      <div  iv className=" fixed w-full -ml-4 pm:-ml-28">
+    <div className={`${isOpen ? "ml-[20.5rem] pm:ml-0 " : "ml-[5.7rem] pm:ml-0 "} bg-[#f8f4f3] pb-6`}>
+      <div  iv className=" fixed w-full -ml-4 pm:-ml-28  z-[50]">
         <Header2 sidebarOpen={isOpen} setSidebarOpen={setIsOpen} />
       </div>
    
@@ -307,7 +307,7 @@ export const Dashboard = () => {
         <div className="bg-white rounded-2xl mt-4 p-4">
           <p className="text-lg m-4">Statistics</p>
           <hr className="mb-4" />
-          <div id="chart" className={` ${isOpen && 'pm:opacity-5'  } h-10 w-full `} ref={chartRef}></div>
+          <div id="chart" className=" h-10 w-full" ref={chartRef}></div>
         </div>
 
         <div className="bg-white w-full h-[32rem] mt-4 rounded-2xl p-4 pm:overflow-x-auto pm:ml-0 ">

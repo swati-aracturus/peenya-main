@@ -55,7 +55,7 @@ export const Profile = () => {
         isOpen ? "ml-[20.5rem] pm:ml-0 " : "ml-[5.7rem] pm:ml-0"
       } bg-[#f8f4f3] pb-6  `}
     >
-      <div className=" fixed w-full  -ml-4 pm:-ml-28">
+      <div className=" fixed w-full  -ml-4 pm:-ml-28 z-[999]">
         <Header2 sidebarOpen={isOpen} setSidebarOpen={setIsOpen} />
       </div>
       <div className="w-full pt-24 px-6 flex flex-col gap-4">
@@ -63,7 +63,7 @@ export const Profile = () => {
           <div className="w-full lg:relative">
           <img
         src={fileName ?  URL.createObjectURL(image1) : '/banner3.png'}
-        className="h-52 object-center rounded-xl"
+        className="h-52 object-center rounded-xl  z-0"
         alt="Uploaded"
       ></img>
             <img

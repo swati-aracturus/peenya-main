@@ -29,96 +29,107 @@ const Registration = () => {
 
   const cards = Array.from({ length: 5 }, (_, index) => (
     <div key={index} className="card mr-10 pm:mx-4 flex p-0 pm:flex-wrap">
-    <img
-      alt="ecommerce"
-      className="w-full h-64 object-cover object-center rounded lg:w-1/2 lg:h-auto"
-      src="https://stackdiary.com/140x100.png"
-    />
-    <div className="w-full mt-6 ml-4 ps:ml-0">
-      <div className="flex justify-between items-center">
-        <div className="align-items-center d-flex flex-wrap gap-1 text-primary text-justify text-red-500 card-justify mb-2">
-          <i className="fa-solid fa-star pm:text-sm"></i>
-          <span className="fw-medium text-primary pm:text-sm">
-            <span className="text-xl mx-1 pm:text-sm">(4.5)</span>2,391 reviews
-          </span>
+      <img
+        alt="ecommerce"
+        className="w-full h-64 object-cover object-center rounded lg:w-1/2 lg:h-auto"
+        src="https://stackdiary.com/140x100.png"
+      />
+      <div className="w-full mt-6 ml-4 ps:ml-0">
+        <div className="flex justify-between items-center">
+          <div className="align-items-center d-flex flex-wrap gap-1 text-primary text-justify text-red-500 card-justify mb-2">
+            <i className="fa-solid fa-star pm:text-sm"></i>
+            <span className="fw-medium text-primary pm:text-sm">
+              <span className="text-xl mx-1 pm:text-sm">(4.5)</span>2,391
+              reviews
+            </span>
+          </div>
+          <div className="flex justify-justify items-center mr-6">
+            <a
+              href=""
+              className="mr-2 btn-icon shadow-md p-2 flex align-center justify-center bg-white rounded-circle"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-title="Bookmark"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                className="bi bi-heart"
+                viewBox="0 0 16 16"
+              >
+                <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+              </svg>
+            </a>
+            <a
+              href=""
+              className="btn-icon shadow-md p-2 flex align-center justify-center text-primary bg-white rounded-circle"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              data-bs-title="Quick View"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="20"
+                height="20"
+                fill="currentColor"
+                className="bi bi-search"
+                viewBox="0 0 16 16"
+              >
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+              </svg>
+            </a>
+          </div>
         </div>
-        <div className="flex justify-justify items-center mr-6">
+        <div className="pm:mx-4">
+          {" "}
+          <h1 className="text-gray-900 text-2xl pm:text-lg title-font font-medium mb-1 mt-4 text-justify">
+            Green Mart Apartments
+          </h1>
+          <p className="leading-relaxed pm:text-sm text-justify">
+            Dui urna vehicula tincidunt pretium consequat luctus mi, platea
+            fermentum conubia tempus ac orci.
+          </p>
+        </div>
+        <div className="flex mt-9 pm:mt-4 pm:mb-10 justify-justify items-center gap-4">
           <a
-            href=""
-            className="mr-2 btn-icon shadow-md p-2 flex align-center justify-center bg-white rounded-circle"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            data-bs-title="Bookmark"
+            href="tel:+4733378901"
+            className="flex gap-2 items-center fs-13 fw-semibold"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="currentColor"
-              className="bi bi-heart"
+              width="15"
+              height="15"
+              fill="#9b9b9b"
+              className="bi bi-telephone"
               viewBox="0 0 16 16"
             >
-              <path d="m8 2.748-.717-.737C5.6.281 2.514.878 1.4 3.053c-.523 1.023-.641 2.5.314 4.385.92 1.815 2.834 3.989 6.286 6.357 3.452-2.368 5.365-4.542 6.286-6.357.955-1.886.838-3.362.314-4.385C13.486.878 10.4.28 8.717 2.01L8 2.748zM8 15C-7.333 4.868 3.279-3.04 7.824 1.143c.06.055.119.112.176.171a3.12 3.12 0 0 1 .176-.17C12.72-3.042 23.333 4.867 8 15z"></path>
+              <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
             </svg>
+            <span className="leading-relaxed pm:text-[12px] text-justify">
+              (123) 456-7890
+            </span>
           </a>
-          <a
-            href=""
-            className="btn-icon shadow-md p-2 flex align-center justify-center text-primary bg-white rounded-circle"
-            data-bs-toggle="tooltip"
-            data-bs-placement="top"
-            data-bs-title="Quick View"
-          >
+          <a href="#" className="flex gap-2 items-center fs-13 fw-semibold">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="20"
-              height="20"
-              fill="currentColor"
-              className="bi bi-search"
+              width="16"
+              height="16"
+              fill="#9b9b9b"
+              className="bi bi-compass"
               viewBox="0 0 16 16"
             >
-              <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"></path>
+              <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
+              <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
             </svg>
+            <span className="leading-relaxed pm:text-[12px] text-justify">
+              Directions
+            </span>
           </a>
         </div>
-      </div>
-<div className="pm:mx-4">      <h1 className="text-gray-900 text-2xl pm:text-lg title-font font-medium mb-1 mt-4 text-justify">
-        Green Mart Apartments
-      </h1>
-      <p className="leading-relaxed pm:text-sm text-justify">
-        Dui urna vehicula tincidunt pretium consequat luctus mi, platea fermentum conubia tempus ac orci.
-      </p></div>
-      <div className="flex mt-9 pm:mt-4 pm:mb-10 justify-justify items-center gap-4">
-        <a href="tel:+4733378901" className="flex gap-2 items-center fs-13 fw-semibold">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="15"
-            height="15"
-            fill="#9b9b9b"
-            className="bi bi-telephone"
-            viewBox="0 0 16 16"
-          >
-            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"></path>
-          </svg>
-          <span className="leading-relaxed pm:text-[12px] text-justify">(123) 456-7890</span>
-        </a>
-        <a href="#" className="flex gap-2 items-center fs-13 fw-semibold">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            width="16"
-            height="16"
-            fill="#9b9b9b"
-            className="bi bi-compass"
-            viewBox="0 0 16 16"
-          >
-            <path d="M8 16.016a7.5 7.5 0 0 0 1.962-14.74A1 1 0 0 0 9 0H7a1 1 0 0 0-.962 1.276A7.5 7.5 0 0 0 8 16.016zm6.5-7.5a6.5 6.5 0 1 1-13 0 6.5 6.5 0 0 1 13 0z" />
-            <path d="m6.94 7.44 4.95-2.83-2.83 4.95-4.949 2.83 2.828-4.95z" />
-          </svg>
-          <span className="leading-relaxed pm:text-[12px] text-justify">Directions</span>
-        </a>
       </div>
     </div>
-  </div>
-  
   ));
   return (
     <>
@@ -358,32 +369,31 @@ const Registration = () => {
                 />
               </div>
 
-
-
               <div className="w-1/2 pm:w-full flex justify-center items-center">
-              <div>
-                <p className="mb-2 text-xl pm:text-sm px-[10%] pt-[5%] text-white">
-                  Want to have a fantastic travel experience? Let us connect you
-                  with diverse categories of businesses, public spots, and
-                  famous landmarks so that you can create unforgettable
-                  memories.
-                </p>
-                <ul className="list-disc pm:text-sm mx-4 text-xl text-white pl-[10%] pr-[25%] pm:pr-[5%]">
-                  <li className="mb-2 py-2 pm:py-0 ">
-                    Find popular businesses and important sites near you.
-                  </li>
-                  <li className="mb-2 py-2">
-                    Get place recommendations based on your preferences.
-                  </li>
-                  <li className="mb-2 py-2">
-                    Explore major spots and landmarks around your location.
-                  </li>
-                  <li className="mb-2 py-2">
-                    Discover diverse categories to navigate various areas.
-                  </li> </ul>
-                <button className="bg-white rounded my-4 mx-[10%] p-2">
-                  Get Started Now
-                </button>
+                <div>
+                  <p className="mb-2 text-xl pm:text-sm px-[10%] pt-[5%] text-white">
+                    Want to have a fantastic travel experience? Let us connect
+                    you with diverse categories of businesses, public spots, and
+                    famous landmarks so that you can create unforgettable
+                    memories.
+                  </p>
+                  <ul className="list-disc pm:text-sm mx-4 text-xl text-white pl-[10%] pr-[25%] pm:pr-[5%]">
+                    <li className="mb-2 py-2 pm:py-0 ">
+                      Find popular businesses and important sites near you.
+                    </li>
+                    <li className="mb-2 py-2">
+                      Get place recommendations based on your preferences.
+                    </li>
+                    <li className="mb-2 py-2">
+                      Explore major spots and landmarks around your location.
+                    </li>
+                    <li className="mb-2 py-2">
+                      Discover diverse categories to navigate various areas.
+                    </li>{" "}
+                  </ul>
+                  <button className="bg-white rounded my-4 mx-[10%] p-2">
+                    Get Started Now
+                  </button>
                 </div>
               </div>
             </div>
@@ -393,7 +403,9 @@ const Registration = () => {
 
       <div className="flex pm:flex-wrap justify-center align-center w-full py-[5%]  mx-auto">
         <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] py-6">
-          <p className=" text-4xlpm:text-lg text-[#F84525] pm:text-center">Places</p>
+          <p className=" text-4xlpm:text-lg text-[#F84525] pm:text-center">
+            Places
+          </p>
           <h1 className="text-5xl font-medium pm:text-2xl pm:text-center pt-4 pm:pt-1 pm:leading-6 pb-0 pm:pb-2 ">
             Discover Your Favourite Place
           </h1>
@@ -403,10 +415,11 @@ const Registration = () => {
             for their needs, taking into account factors such as price, features
             and support.
           </p>
-<div className="flex justify-center items-center text-center">
-          <button className="bg-[#F84525] rounded text-white my-4 pm:text-xs pm:p-2 p-3">
-            View All Places
-          </button></div>
+          <div className="flex justify-center items-center text-center">
+            <button className="bg-[#F84525] rounded text-white my-4 pm:text-xs pm:p-2 p-3">
+              View All Places
+            </button>
+          </div>
           <svg
             className="text-primary mt-4 d-none d-lg-block svg-responsive"
             width="200"

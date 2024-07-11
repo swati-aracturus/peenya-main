@@ -67,14 +67,14 @@ const Articles = () => {
 
   return (
     <div className="relative w-[90%] py-8 m-auto mt-12  mb-20">
-      <div className="px-[20rem] mb-12">
+      <div className="px-[20rem] mb-12 pm:px-0">
         <div>
-          <h2 className="text-red-500 text-3xl text-center">
+          <h2 className="text-red-500 text-3xl text-center pm:text-xl">
             Our Latest Articles
           </h2>
         </div>
         <div>
-          <p className="text-[3.4rem] font-semibold text-center">
+          <p className="text-[3.4rem] font-semibold text-center pm:text-3xl">
             Discover Our Latest News And Articles
           </p>
         </div>

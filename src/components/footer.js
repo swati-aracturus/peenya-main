@@ -81,30 +81,30 @@ export default function Footer() {
 
       <Articles />
 
-      <div className="bg-[#191e25] px-40 pt-36 pb-2">
-        <div className="bg-[#f84525] w-full h-48 relative px-32 rounded-2xl">
+      <div className="bg-[#191e25] lg:px-40 pm:px-5 lg:pt-36 pm:pt-20 pb-2">
+        <div className="bg-[#f84525] w-full lg:h-48 pm:h-[36rem] relative lg:px-32 pm:px-4 rounded-2xl pm:flex pm:flex-col pm:justify-start pm:items-center ">
           <img
             src={process.env.PUBLIC_URL + "/07.jpg"}
-            className="absolute bottom-0 w-[18rem] h-[17rem]"
+            className="absolute bottom-0 lg:w-[16rem] lg:h-[17rem] pm:w-52 pm:h-44  "
           ></img>
-          <div className="absolute left-[33%] py-11 w-[30%]   ">
+          <div className="lg:absolute lg:left-[33%] lg:py-11 lg:w-[30%] pm:flex pm:flex-col pm:justify-center pm:items-center pm:mt-12">
             <h1 className="text-2xl text-white  font-semibold mb-3  ">
               Download Our App
             </h1>
-            <p className="text-lg text-white">
+            <p className="text-lg text-white ">
               It is a long established fact that a reader will be distracted by
               the readable content.
             </p>
           </div>
-          <div className="flex absolute right-20 gap-3 py-16 text-white">
-            <button className="w-48 h-16 border border-white rounded-lg flex px-4 py-2 items-center">
-              <i class="fa-brands fa-apple text-3xl"></i>
+          <div className="lg:flex lg:absolute lg:right-20 gap-3 py-16 text-white ">
+            <button className="w-48 h-16 border border-white rounded-lg flex px-4 py-2 items-center pm:mb-4">
+              <i className="fa-brands fa-apple text-3xl"></i>
               <p className="text-sm">
                 Available on the <span className="text-xl">App Store</span>
               </p>
             </button>
             <button className="w-48 h-16 border border-white rounded-lg flex px-4 py-2 items-center">
-              <i class="fa-brands fa-google-play text-3xl"></i>
+              <i className="fa-brands fa-google-play text-3xl"></i>
               <p className="text-sm">
                 Available on the <span className="text-xl">App Store</span>
               </p>
@@ -112,8 +112,8 @@ export default function Footer() {
           </div>
         </div>
         <hr className="mt-16 border-gray-500"></hr>
-        <div className="flex justify-between gap-20 items-start text-white py-14">
-          <div className="w-1/3">
+        <div className="flex pm:flex-col justify-between gap-20 items-start text-white lg:py-14 pm:mt-8 ">
+          <div className="lg:w-1/3">
             <h1 className="text-2xl text-white font-semibold mb-8">
               Get In Touch
             </h1>
@@ -123,35 +123,37 @@ export default function Footer() {
             </p>
             <div className="w-[25rem] h-32 border border-gray-700 rounded-2xl p-10 mb-8">
               <p className="text-xl text-gray-500 mb-2">Join our Whatapp:</p>
-              <i class="fa-brands fa-whatsapp text-2xl"> (123) 456-7890</i>
+              <i className="fa-brands fa-whatsapp text-2xl"> (123) 456-7890</i>
             </div>
-            <h3 className="text-xl font-semibold mb-8">
+            <h3 className="text-xl font-semibold lg:mb-8 pm:mb-1">
               Want to join ListOn? <br /> Write us !
             </h3>
             <p>support@ListOn.com</p>
           </div>
-          <hr className="border border-gray-500 h-[27rem]"></hr>
-          <div className="w-1/3 ">
+          <hr className="lg:border border-gray-500 lg:h-[27rem] pm:h-[0rem]"></hr>
+          <div className="lg:w-1/3 pm:-mt-28">
             <h2 className="text-2xl font-semibold mb-8">Stay Connect</h2>
             <p className="mb-8 text-lg">
               1123 Fictional St, San Francisco, CA 94103
             </p>
             <div className="flex flex-col ">
               <div>
-                <i class="fa-solid fa-phone text mr-2"> </i> (123) 456-7890
+                <i className="fa-solid fa-phone text mr-2"> </i> (123) 456-7890
               </div>{" "}
               <br />
               <div>
-                <i class="fa-solid fa-envelope text mr-2"> </i>
+                <i className="fa-solid fa-envelope text mr-2"> </i>
                 support@ListOn.com
               </div>
             </div>
           </div>
-          <hr className="border border-gray-500 h-[27rem]"></hr>
+          <hr className="lg:border border-gray-500 lg:h-[27rem]"></hr>
 
           <div>
             <div>
-              <h1 className="mb-8 text-2xl font-semibold">Get In Touch</h1>
+              <h1 className="mb-8 text-2xl font-semibold pm:-mt-20">
+                Get In Touch
+              </h1>
               <div className="relative w-[25rem]  h-16 ">
                 <input
                   type="text"
@@ -170,39 +172,43 @@ export default function Footer() {
               </h2>
               <div className="flex justify-start items-center gap-2">
                 <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i class="fa-brands fa-instagram fa-xl"></i>
+                  <i className="fa-brands fa-instagram fa-xl"></i>
                 </div>
                 <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i class="fa-brands fa-twitter fa-xl"></i>
+                  <i className="fa-brands fa-twitter fa-xl"></i>
                 </div>
                 <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i class="fa-brands fa-dribbble fa-xl"></i>
+                  <i className="fa-brands fa-dribbble fa-xl"></i>
                 </div>
                 <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i class="fa-brands fa-facebook-f fa-xl"></i>
+                  <i className="fa-brands fa-facebook-f fa-xl"></i>
                 </div>
                 <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i class="fa-brands fa-whatsapp fa-xl"></i>
+                  <i className="fa-brands fa-whatsapp fa-xl"></i>
                 </div>
               </div>
             </div>
           </div>
         </div>
         <hr className="mt-6 mb-6 border-gray-500"></hr>
-
-        <div className="flex justify-between items-center">
-            <div className="flex justify-center items-center gap-4">
-              <img src={process.env.PUBLIC_URL + "/brand.png"} className="w-40"></img>
-              <hr className="border border-gray-500 h-10 mx-4"></hr>
-              <p className="text-white text-lg">© 2022 ListOn - All Rights Reserved- All Rights Reserved</p>
-            </div>
-            <div className="text-gray-500 flex justify-start items-center gap-3 text-lg">
-              <a href="">Priavcy</a>
-              <p>/</p>
-              <a href="">Sitemap</a>
-              <p>/</p>
-              <a href="">Cookies</a>
-            </div>
+        <div className="flex pm:flex-col justify-between items-center">
+          <div className="flex pm:flex-col justify-center pm:items-start items-center gap-4">
+            <img
+              src={process.env.PUBLIC_URL + "/brand.png"}
+              className="w-40"
+            ></img>
+            <hr className="lg:border border-gray-500 h-10 mx-4"></hr>
+            <p className="text-white text-lg pm:-mt-12">
+              © 2022 ListOn - All Rights Reserved- All Rights Reserved
+            </p>
+          </div>
+          <div className="text-gray-500 flex justify-start items-center  gap-3 text-lg">
+            <a href="">Priavcy</a>
+            <p>/</p>
+            <a href="">Sitemap</a>
+            <p>/</p>
+            <a href="">Cookies</a>
+          </div>
         </div>
       </div>
     </>

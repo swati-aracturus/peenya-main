@@ -14,7 +14,7 @@ const Sidebar = ({ isOpen, setIsOpen }) => {
 
   return (
     <div
-      className={`fixed inset-y-0 left-0 transform bg-[#f8f4f3] transition-transform duration-300  ease-in-out  z-50  ${
+      className={`fixed inset-y-0 left-0 transform bg-[#f8f4f3] transition-transform duration-300  ease-in-out  z-[999]  ${
       
         isOpen ? "w-80  pm:z-50" : "w-24"
       } ${
