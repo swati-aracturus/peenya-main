@@ -20,29 +20,8 @@ export const Home = () => {
 
 
 
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const testimonials = [
-    {
-      text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-      author: "MARK, SOUTH EVERETT",
-    },
-    {
-      text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
-      author: "MARK, SOUTH EVERETT",
-    },
-  ];
-
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial(
-      (prev) => (prev - 1 + testimonials.length) % testimonials.length
-    );
-  };
-
-  const cards = Array.from({ length: 5 }, (_, index) => (
+ 
+  const cards = Array.from({ length: 9 }, (_, index) => (
     <div key={index} className="card mr-10 pm:mx-4 flex p-0 pm:flex-wrap transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
       <img
         alt="ecommerce"
@@ -156,13 +135,13 @@ export const Home = () => {
             data-aos="fade-down"
             data-aos-delay="400"
           >
-            <p className="text-center font-caveat text-4xl pm:text-lg text-[#F84525]">
+            <p className="text-center font-caveat text-[2.5rem] pm:text-lg text-[#F84525] pm:text-[1.37rem]">
               Categories
             </p>
-            <h1 className="text-5xl text-white font-semibold pm:text-2xl text-center pt-4 pb-0 pm:pb-2 pm:leading-3">
+            <h1 className="text-[3rem] text-white  pm:text-2xl text-center pt-4 pb-0 pm:pb-2 pm:leading-3 pm:text-[1.8rem] pm:my-1">
               Featured Categories
             </h1>
-            <p className="text-center text-white text-lg font-medium py-6 pm:pt-1 pm:text-xs">
+            <p className="text-center text-white text-[16px] font-medium py-6 pm:pt-1 pm:text-[15px] pm:mt-2 ">
               Discover exciting categories.{" "}
               <span className="text-[#F84525]">
                 Find what you’re looking for
@@ -170,8 +149,8 @@ export const Home = () => {
             </p>
           </div>
         </div>
-        <div className="flex flex-wrap w-[85%] pm:w-[95%] mx-auto pt-[5%] ">
-          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
+        <div className="flex flex-wrap w-[95%] pm:w-[95%] mx-auto pt-[5%] ">
+          <div className=" pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px] w-1/4">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -186,7 +165,7 @@ export const Home = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
+          <div className="w-1/4 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -201,7 +180,22 @@ export const Home = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
+          <div className="w-1/4 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
+            <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
+              <div className="py-1 px-1 bg-[#121111] rounded-xl">
+                <img src="/fg.png" />
+              </div>
+              <h1 className="text-white text-xl pbold">
+                Apartment&nbsp;
+                <br />
+                <span className="text-white text-sm">99+ listings</span>
+              </h1>
+              <button className="text-white text-3xl rotate-45 bold">
+                <a href="#">↑ &nbsp;&nbsp;</a>
+              </button>
+            </div>
+          </div>
+          <div className="w-1/4 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -217,8 +211,8 @@ export const Home = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-wrap w-[85%] pm:w-[95%] mx-auto pb-[2%]">
-          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
+        <div className="flex flex-wrap w-[95%] pm:w-[95%] mx-auto pb-[2%]">
+          <div className="w-1/4 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -233,7 +227,7 @@ export const Home = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
+          <div className="w-1/4 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -248,7 +242,22 @@ export const Home = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
+          <div className="w-1/4 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
+            <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
+              <div className="py-1 px-1 bg-[#121111] rounded-xl">
+                <img src="/fg.png" />
+              </div>
+              <h1 className="text-white text-xl pbold">
+                Apartment&nbsp;
+                <br />
+                <span className="text-white text-sm">99+ listings</span>
+              </h1>
+              <button className="text-white text-3xl rotate-45 bold">
+                <a href="#">↑ &nbsp;&nbsp;</a>
+              </button>
+            </div>
+          </div>  
+          <div className="w-1/4 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -268,10 +277,10 @@ export const Home = () => {
 
       <div className="flex justify-center ">
         <div className="pt-[5%] pm:pt-[20%]">
-          <p className="text-center text-4xl pm:text-lg text-[#F84525] font-caveat">
+          <p className="text-center text-[2.5rem] pm:text-lg text-[#F84525] font-caveat">
             Best Way
           </p>
-          <h1 className="text-5xl font-semibold w-4/5 mx-auto pm:text-4xl text-center pt-4 pm:pt-1 pm:leading-10">
+          <h1 className="text-[3rem] font-semibold w-4/5 mx-auto pm:text-4xl text-center pt-4 pm:pt-1 pm:leading-10">
             Find Your Dream Place The Best Way
           </h1>
           <p className="text-center mx-auto text-lg font-medium py-6 pm:pt-2 pm:text-sm pm:w-[80%]">
@@ -359,10 +368,10 @@ export const Home = () => {
             data-aos="fade-down"
             data-aos-delay="400"
           >
-            <p className="text-center text-4xl pm:text-lg text-white font-caveat">
+            <p className="text-center text-[2.5rem] pm:text-lg text-white font-caveat">
               Top Regions
             </p>
-            <h1 className="text-5xl text-white font-semibold pm:text-2xl text-center pt-4 pb-0 pm:pb-2 pm:leading-3">
+            <h1 className="text-[3rem] text-white font-semibold pm:text-2xl text-center pt-4 pb-0 pm:pb-2 pm:leading-3">
               Explore Cities
             </h1>
             <p className="text-center text-white text-md font-medium py-6 pm:pt-1 pm:text-xs">
@@ -374,8 +383,8 @@ export const Home = () => {
 
             <div className="flex pm:flex-wrap justify-center align-center w-full pm:px-0 px-16">
               <div className="w-1/2 pm:w-full">
-                <h1 className="pl-[10%] pm:px-4 py-6 pm:text-2xl text-[50px] justify-center text-white">
-                  Find your perfect Place based on  <span className="font-caveat text-[40px]"> your interest</span>
+                <h1 className="pl-[10%] pm:px-4 py-6 pm:text-3xl text-[3.5rem] justify-center text-white">
+                  Find your perfect Place based on  <span className="font-caveat text-[40px] pm:text-[26px]"> your interest</span>
                 </h1>
                 <img
                   className="px-[5%] rounded-[10%] "
@@ -418,21 +427,21 @@ export const Home = () => {
 
       <div className="flex pm:flex-wrap justify-center align-center w-full py-[5%]  mx-auto">
       {/* <div className=""> */}
-        <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] pt-6 lg:overflow-y-auto lg:sticky lg:top-0 lg:h-screen">
-          <p className=" text-4xl pm:text-lg text-[#F84525] pm:text-center font-caveat">
+        <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] pt-6 lg:overflow-y-auto lg:sticky lg:top-0 lg:h-screen hide-scrollbar">
+          <p className=" text-[2rem] pm:text-lg text-[#F84525] pm:text-center font-caveat pm:text-[1.37rem]">
             Places
           </p>
-          <h1 className="text-5xl font-medium pm:text-2xl pm:text-center pt-4 pm:pt-1 pm:leading-6 pb-0 pm:pb-2 ">
+          <h1 className="text-[2.3rem] font-medium pm:text-[1.8rem] pm:my-2 pm:text-center pt-4 pm:pt-1 pm:leading-6 pb-0 pm:pb-2 ">
             Discover Your Favourite Place
           </h1>
-          <p className="text-justify text-md  py-6 pm:pt-1 pm:text-xs">
+          <p className="text-justify text-md  py-6 pm:pt-1 pm:text-sm pm:text-center">
             Our publications can provide quality and useful tips and advice for
             companies on how to evaluate SaaS providers and choose the best one
             for their needs, taking into account factors such as price, features
             and support.
           </p>
           <div className="flex justify-center items-center text-center">
-            <button className="bg-[#F84525] rounded text-white my-4 pm:text-xs pm:p-2 p-3">
+            <button className="bg-[#F84525] rounded text-white my-4 pm:text-sm pm:p-4 p-3 ">
               View All Places
             </button>
           </div>

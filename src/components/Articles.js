@@ -56,38 +56,42 @@ const Articles = () => {
       goToNext();
     }, 3000); // Change slide every 3 seconds
     return () => clearInterval(interval); // Clear interval on component unmount
-  }, [currentIndex]);
+  }, []);
 
   useEffect(() => {
     if (sliderRef.current) {
-      sliderRef.current.style.transform = `translateX(-${currentIndex * (100 / (window.innerWidth < 768 ? cardsToShowMobile : cardsToShow))}%)`;
+      const totalVisibleCards = window.innerWidth < 768 ? cardsToShowMobile : cardsToShow;
+      sliderRef.current.style.transition = currentIndex === 0 || currentIndex === totalCards * 2 ? 'none' : 'transform 0.3s ease-in-out';
+      sliderRef.current.style.transform = `translateX(-${currentIndex * (100 / totalVisibleCards)}%)`;
     }
   }, [currentIndex]);
 
   const goToPrevious = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : (window.innerWidth < 768 ? Math.ceil(totalCards / cardsToShowMobile) - 1 : Math.ceil(totalCards / cardsToShow) - 1) // Loop to the last card
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === 0 ? totalCards - 1 : prevIndex - 1));
   };
 
   const goToNext = () => {
-    setCurrentIndex((prevIndex) =>
-      prevIndex < (window.innerWidth < 768 ? Math.ceil(totalCards / cardsToShowMobile) - 1 : Math.ceil(totalCards / cardsToShow) - 1)
-        ? prevIndex + 1
-        : 0 // Loop to the first card
-    );
+    setCurrentIndex((prevIndex) => (prevIndex === totalCards * 2 - 1 ? totalCards : prevIndex + 1));
+  };
+
+  const handleTransitionEnd = () => {
+    if (currentIndex === totalCards * 2) {
+      setCurrentIndex(totalCards);
+    } else if (currentIndex === 0) {
+      setCurrentIndex(totalCards);
+    }
   };
 
   return (
     <div className="relative w-[90%] py-8 m-auto mt-12 mb-20">
       <div className="px-[20rem] mb-12 pm:px-0">
         <div>
-          <h2 className="text-red-500 text-3xl text-center pm:text-xl font-caveat">
+          <h2 className="text-red-500 text-[2.5rem] text-center pm:text-xl font-caveat">
             Our Latest Articles
           </h2>
         </div>
         <div>
-          <p className="text-[3.4rem] font-semibold text-center pm:text-3xl">
+          <p className="text-[3rem] font-semibold text-center pm:text-3xl">
             Discover Our Latest News And Articles
           </p>
         </div>
@@ -105,8 +109,8 @@ const Articles = () => {
         <div
           className="flex transition-transform duration-300 ease-in-out"
           ref={sliderRef}
+          onTransitionEnd={handleTransitionEnd}
         >
-          {/* Duplicate cards for infinite scroll effect */}
           {[...cards, ...cards, ...cards].map((card, index) => (
             <div key={card.id + "-" + index} className={`flex-shrink-0 ml-2 p-2 ${window.innerWidth < 768 ? 'w-full' : 'w-[430px]'}`}>
               <div className="relative rounded-2xl overflow-hidden h-[490px] border-2">
@@ -125,7 +129,7 @@ const Articles = () => {
                         Events
                       </button>
                     </div>
-                    <h2 className="text-2xl mb-3 p-2">{card.title}</h2>
+                    <h2 className="text-2xl mb-3 p-2 pm:text-xl">{card.title}</h2>
                     <hr className="border-0 h-[1px] bg-slate-300 mb-4" />
                     <div className="flex justify-start items-center gap-2">
                       <img src={card.image} className="w-12 h-12 rounded-full" />
@@ -140,9 +144,11 @@ const Articles = () => {
             </div>
           ))}
         </div>
-        <button
+        
+      </div>
+      <button
           onClick={goToPrevious}
-          className="absolute bottom-0 right-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 transition mr-2"
+          className="absolute  right-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 transition mr-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -160,7 +166,7 @@ const Articles = () => {
         </button>
         <button
           onClick={goToNext}
-          className="absolute bottom-0 left-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 transition ml-2"
+          className="absolute left-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full hover:bg-gray-700 transition ml-2"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -176,7 +182,6 @@ const Articles = () => {
             />
           </svg>
         </button>
-      </div>
     </div>
   );
 };
