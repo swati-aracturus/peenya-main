@@ -34,8 +34,8 @@ export default function Footer() {
       >
         <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
         <div className="relative z-10 m-auto p-8 flex flex-col gap-4 pm:p-2">
-          <h2 className="text-red-500 text-center text-[29px] font-caveat">Testimonial</h2>
-          <h2 className="text-[48px] text-center mx-[30%] text-white font-bold pm:mx-[2%] pm:text-[30px]">
+          <h2 className="text-red-500 text-center text-[2.5rem] font-caveat pm:text-[1.37rem] pm:mt-10">Testimonial</h2>
+          <h2 className="text-[3rem] text-center mx-[30%] text-white font-bold pm:mx-[2%] pm:text-[30px]">
             See What Our Clients Say About Us
           </h2>
           <p className="text-center text-white text-[18px] ">
@@ -121,7 +121,7 @@ export default function Footer() {
               Join our newsletter and receive the best job openings of the week,
               right on your inbox.
             </p>
-            <div className="w-[25rem] h-32 border border-gray-700 rounded-2xl p-10 mb-8">
+            <div className="w-[22.4rem] h-32 border border-gray-700 rounded-2xl p-10 mb-8">
               <p className="text-xl text-gray-500 mb-2">Join our Whatapp:</p>
               <i className="fa-brands fa-whatsapp text-2xl"> (123) 456-7890</i>
             </div>
@@ -154,7 +154,7 @@ export default function Footer() {
               <h1 className="mb-8 text-2xl font-semibold pm:-mt-20">
                 Get In Touch
               </h1>
-              <div className="relative w-[25rem]  h-16 ">
+              <div className="relative w-[22.4rem]  h-16 ">
                 <input
                   type="text"
                   placeholder="name@example.com"

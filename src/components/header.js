@@ -47,8 +47,8 @@ export default function Header() {
         <div className="inset-0 bg-gradient-to-b from-transparent to-[#191e25]/100 relative z-10 flex justify-center align-center items-center px-[15%] lx:px-[5%]">
           <div className="pt-[38%]">
             <p className="text-center text-white">WE ARE #1 ON THE MARKET</p>
-            <h1 className="text-7xl text-white font-semibold sd:text-4xl text-center py-4 pm:text-2xl">
-              We're Here To Help You <span className="font-caveat italic custom-underline z-10 text-red-60066">Navigate</span> While Traveling
+            <h1 className="text-7xl text-white font-semibold sd:text-4xl text-center py-4 pm:text-2xl px-10 leading-[5.5rem] ">
+              We're Here To Help You <span className="font-caveat italic custom-underline z-10 text-span  p-2">Navigate</span> While Traveling
             </h1>
             <p className="text-center text-white text-lg font-medium py-6">
               You'll get comprehensive results based on the provided location.

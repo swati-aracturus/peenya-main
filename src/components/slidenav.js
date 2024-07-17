@@ -320,7 +320,7 @@
         <nav className="flex justify-between items-center w-full ">
           <img src="/brand.png" className="w-28"></img>
           <div className="flex justify-center items-center list-none gap-2">
-            <div className="ml-40 relative">
+            <div className="ml-32 relative">
               <i className="fa-solid fa-heart fa-lg"></i>
               <div className="px-2 py-1 text-xs bg-red-600 rounded-full flex justify-center items-center text-white absolute left-4 bottom-5">
                 0
