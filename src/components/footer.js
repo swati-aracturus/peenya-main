@@ -33,20 +33,20 @@ export default function Footer() {
         }}
       >
         <div className="absolute inset-0 bg-black opacity-50 z-0"></div>
-        <div className="relative z-10 m-auto p-8 flex flex-col gap-4">
-          <h2 className="text-red-500 text-center text-[29px]">Testimonial</h2>
-          <h2 className="text-[48px] text-center mx-[30%] text-white font-bold">
+        <div className="relative z-10 m-auto p-8 flex flex-col gap-4 pm:p-2">
+          <h2 className="text-red-500 text-center text-[29px] font-caveat">Testimonial</h2>
+          <h2 className="text-[48px] text-center mx-[30%] text-white font-bold pm:mx-[2%] pm:text-[30px]">
             See What Our Clients Say About Us
           </h2>
-          <p className="text-center text-white text-[18px]">
+          <p className="text-center text-white text-[18px] ">
             Discover exciting categories.{" "}
             <span className="text-red-500">Find what you’re looking for.</span>
           </p>
         </div>
 
-        <div className="relative z-10 px-40  mx-auto  w-full h-[20rem]">
+        <div className="relative z-10 px-40  mx-auto  w-full h-[20rem] pm:px-5">
           <div className="relative mx-auto">
-            <div className="overflow-hidden rounded-lg">
+            <div className="overflow-hidden rounded-lg ">
               {slides.map((slide, index) => (
                 <div
                   key={index}
@@ -54,7 +54,7 @@ export default function Footer() {
                     index === currentIndex ? "block" : "hidden"
                   }`}
                 >
-                  <div className="p-20  text-white text-center text-[2rem] h-full w-full">
+                  <div className="p-20  text-white text-center text-[2rem] h-full w-full pm:text-[20px] pm:px-2">
                     {slide.text}
                   </div>
                 </div>

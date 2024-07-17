@@ -938,3 +938,30 @@ number-circle {
   .text1 {
     font-size: 25px;
   }
+
+
+
+  /* .custom-underline {
+    position: relative;
+    display: inline-block;
+  }
+
+  .custom-underline::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 4px;
+    background-color: red;
+    border-radius: 2px;
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease;
+  }
+
+  .custom-underline::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+    z-index:0;
+  } */

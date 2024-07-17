@@ -6,9 +6,10 @@ import Slidenav from "./slidenav";
 
 
 export default function Header() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+  // useEffect(() => {
+  //   AOS.init();
+  // }, []);
+  
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
 
@@ -47,7 +48,7 @@ export default function Header() {
           <div className="pt-[38%]">
             <p className="text-center text-white">WE ARE #1 ON THE MARKET</p>
             <h1 className="text-7xl text-white font-semibold sd:text-4xl text-center py-4 pm:text-2xl">
-              We're Here To Help You Navigate While Traveling
+              We're Here To Help You <span className="font-caveat italic custom-underline z-10 text-red-60066">Navigate</span> While Traveling
             </h1>
             <p className="text-center text-white text-lg font-medium py-6">
               You'll get comprehensive results based on the provided location.
@@ -60,7 +61,7 @@ export default function Header() {
                 >
                   Search
                 </label>
-                <div  iv className="relative">
+                <div className="relative">
                   <div className="absolute inset-y-0 start-0 flex items-center sd-3 pointer-events-none">
                  <img src="/search.png" height={20} width={20}/>
                   </div>

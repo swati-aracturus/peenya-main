@@ -1,52 +1,34 @@
 import React, { useState } from "react";
 import FAQ from "./F&Qs";
 
-export const Forgot_Password = () => {
+export const Terms_Condition = () => {
   const [Nav, setNav] = useState(false);
 
-  
-  const [openSubMenu, setOpenSubMenu] = useState(null); 
-  const [openNestedSubMenu, setOpenNestedSubMenu] = useState(null); 
+  const [openSubMenu, setOpenSubMenu] = useState(null);
+  const [openNestedSubMenu, setOpenNestedSubMenu] = useState(null);
 
   // Function to toggle main menu items
   const toggleSubMenu = (index) => {
     if (openSubMenu === index) {
-      setOpenSubMenu(null); 
+      setOpenSubMenu(null);
     } else {
-      setOpenSubMenu(index); 
-      setOpenNestedSubMenu(null); 
+      setOpenSubMenu(index);
+      setOpenNestedSubMenu(null);
     }
   };
 
   // Function to toggle nested sub-menus
   const toggleNestedSubMenu = (index) => {
     if (openNestedSubMenu === index) {
-      setOpenNestedSubMenu(null); 
+      setOpenNestedSubMenu(null);
     } else {
-      setOpenNestedSubMenu(index); 
+      setOpenNestedSubMenu(index);
     }
   };
 
-
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
- 
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
-  };
-
-
-
-
   return (
     <>
-      {/* header */}
+      {/* Header */}
       <div className="fixed top-0 bg-white w-full z-50">
         <div className=" container  px-4 py-4 flex justify-start items-center  pm:hidden ">
           <div className="flex items-center lg:px-10">
@@ -73,9 +55,7 @@ export const Forgot_Password = () => {
                             <a href="#">Bookings</a>
                           </li>
                           <li className="dropdown-link">
-                            <a href="#">
-                              Message
-                            </a>
+                            <a href="#">Message</a>
                           </li>
                           <li className="dropdown-link">
                             <a href="#">Wallet</a>
@@ -109,36 +89,8 @@ export const Forgot_Password = () => {
                       <div className="dropdown">
                         <ul>
                           <li className="dropdown-link">
-                            <a href="#">List View<i className="fas fa-caret-down"></i></a>
-                            <div className="dropdown second">
-                              <ul>
-                                <li className="dropdown-link">
-                                  <a href="#">Left Sidebar</a>
-                                </li>
-                                <li className="dropdown-link">
-                                  <a href="#">Right Sidebar</a>
-                                </li>
-                                <div className="arrow"></div>
-                              </ul>
-                            </div>
-                          </li>
-                          <li className="dropdown-link">
-                            <a href="#">Grid View 1<i className="fas fa-caret-down"></i></a>
-                            <div className="dropdown second">
-                              <ul>
-                                <li className="dropdown-link">
-                                  <a href="/listing-grid">Left Sidebar</a>
-                                </li>
-                                <li className="dropdown-link">
-                                  <a href="#">Right Sidebar</a>
-                                </li>
-                                <div className="arrow"></div>
-                              </ul>
-                            </div>
-                          </li>
-                          <li className="dropdown-link">
                             <a href="#">
-                            Grid View 2<i className="fas fa-caret-down"></i>
+                              List View<i className="fas fa-caret-down"></i>
                             </a>
                             <div className="dropdown second">
                               <ul>
@@ -153,7 +105,42 @@ export const Forgot_Password = () => {
                             </div>
                           </li>
                           <li className="dropdown-link">
-                            <a href="#">Half Map + Sidebar<i className="fas fa-caret-down"></i></a>
+                            <a href="#">
+                              Grid View 1<i className="fas fa-caret-down"></i>
+                            </a>
+                            <div className="dropdown second">
+                              <ul>
+                                <li className="dropdown-link">
+                                  <a href="/listing-grid">Left Sidebar</a>
+                                </li>
+                                <li className="dropdown-link">
+                                  <a href="#">Right Sidebar</a>
+                                </li>
+                                <div className="arrow"></div>
+                              </ul>
+                            </div>
+                          </li>
+                          <li className="dropdown-link">
+                            <a href="#">
+                              Grid View 2<i className="fas fa-caret-down"></i>
+                            </a>
+                            <div className="dropdown second">
+                              <ul>
+                                <li className="dropdown-link">
+                                  <a href="#">Left Sidebar</a>
+                                </li>
+                                <li className="dropdown-link">
+                                  <a href="#">Right Sidebar</a>
+                                </li>
+                                <div className="arrow"></div>
+                              </ul>
+                            </div>
+                          </li>
+                          <li className="dropdown-link">
+                            <a href="#">
+                              Half Map + Sidebar
+                              <i className="fas fa-caret-down"></i>
+                            </a>
                             <div className="dropdown second">
                               <ul>
                                 <li className="dropdown-link">
@@ -171,8 +158,12 @@ export const Forgot_Password = () => {
                                 <div className="arrow"></div>
                               </ul>
                             </div>
-                          </li><li className="dropdown-link">
-                            <a href="#">Listing Details<i className="fas fa-caret-down"></i></a>
+                          </li>
+                          <li className="dropdown-link">
+                            <a href="#">
+                              Listing Details
+                              <i className="fas fa-caret-down"></i>
+                            </a>
                             <div className="dropdown second">
                               <ul>
                                 <li className="dropdown-link">
@@ -200,7 +191,9 @@ export const Forgot_Password = () => {
                       <div className="dropdown">
                         <ul>
                           <li className="dropdown-link">
-                            <a href="#">About <i className="fas fa-caret-down"></i></a>
+                            <a href="#">
+                              About <i className="fas fa-caret-down"></i>
+                            </a>
                             <div className="dropdown second">
                               <ul>
                                 <li className="dropdown-link">
@@ -214,7 +207,9 @@ export const Forgot_Password = () => {
                             </div>
                           </li>
                           <li className="dropdown-link">
-                            <a href="#">Agent<i className="fas fa-caret-down"></i></a>
+                            <a href="#">
+                              Agent<i className="fas fa-caret-down"></i>
+                            </a>
                             <div className="dropdown second">
                               <ul>
                                 <li className="dropdown-link">
@@ -229,7 +224,7 @@ export const Forgot_Password = () => {
                           </li>
                           <li className="dropdown-link">
                             <a href="#">
-                            Blog<i className="fas fa-caret-down"></i>
+                              Blog<i className="fas fa-caret-down"></i>
                             </a>
                             <div className="dropdown second">
                               <ul>
@@ -252,7 +247,10 @@ export const Forgot_Password = () => {
                             <a href="/pricing">Pricing</a>
                           </li>
                           <li className="dropdown-link">
-                            <a href="#">Authentication<i className="fas fa-caret-down"></i></a>
+                            <a href="#">
+                              Authentication
+                              <i className="fas fa-caret-down"></i>
+                            </a>
                             <div className="dropdown second">
                               <ul>
                                 <li className="dropdown-link">
@@ -271,7 +269,9 @@ export const Forgot_Password = () => {
                             </div>
                           </li>
                           <li className="dropdown-link">
-                            <a href="#">Speciality<i className="fas fa-caret-down"></i></a>
+                            <a href="#">
+                              Speciality<i className="fas fa-caret-down"></i>
+                            </a>
                             <div className="dropdown second">
                               <ul>
                                 <li className="dropdown-link">
@@ -281,7 +281,9 @@ export const Forgot_Password = () => {
                             </div>
                           </li>
                           <li className="dropdown-link">
-                            <a href="#">Help Center<i className="fas fa-caret-down"></i></a>
+                            <a href="#">
+                              Help Center<i className="fas fa-caret-down"></i>
+                            </a>
                             <div className="dropdown second">
                               <ul>
                                 <li className="dropdown-link">
@@ -299,7 +301,6 @@ export const Forgot_Password = () => {
                         </ul>
                       </div>
                     </li>
-                    
                   </ul>
                 </div>
               </div>
@@ -378,8 +379,12 @@ export const Forgot_Password = () => {
               </button>
               {openSubMenu === 0 && (
                 <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-sm">
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Home Item 1</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Home Item 2</a></li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Home Item 1</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Home Item 2</a>
+                  </li>
                 </ul>
               )}
             </li>
@@ -392,16 +397,36 @@ export const Forgot_Password = () => {
               </button>
               {openSubMenu === 1 && (
                 <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-sm">
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="/dashboard">Dashboard</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Bookings</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Message</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Wallet</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Edit Profile</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="/listing2">Add Listing</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">My Listing</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Reviews</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Bookmark</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Settings</a></li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="/dashboard">Dashboard</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Bookings</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Message</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Wallet</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Edit Profile</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="/listing2">Add Listing</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">My Listing</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Reviews</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Bookmark</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Settings</a>
+                  </li>
                 </ul>
               )}
             </li>
@@ -423,8 +448,12 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 3 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg" ><a href="#">Left Sidebar</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg" ><a href="#">Right Sidebar</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Left Sidebar</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Right Sidebar</a>
+                        </li>
                       </ul>
                     )}
                   </li>
@@ -437,8 +466,12 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 4 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="/listing-grid">Left Sidebar</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Right Sidebar</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="/listing-grid">Left Sidebar</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Right Sidebar</a>
+                        </li>
                       </ul>
                     )}
                   </li>
@@ -451,8 +484,12 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 5 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Left Sidebar</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Right Sidebar</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Left Sidebar</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Right Sidebar</a>
+                        </li>
                       </ul>
                     )}
                   </li>
@@ -465,10 +502,18 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 6 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Half Map List</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Half Map List (Car)</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Half Map Grid 1</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Half Map Grid 2</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Half Map List</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Half Map List (Car)</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Half Map Grid 1</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Half Map Grid 2</a>
+                        </li>
                       </ul>
                     )}
                   </li>
@@ -481,9 +526,15 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 7 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Listing Details 1</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Listing Details 2</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Listing Details Car</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Listing Details 1</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Listing Details 2</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Listing Details Car</a>
+                        </li>
                       </ul>
                     )}
                   </li>
@@ -499,8 +550,12 @@ export const Forgot_Password = () => {
               </button>
               {openSubMenu === 8 && (
                 <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-sm">
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Explore Item 1</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg"><a href="#">Explore Item 2</a></li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Explore Item 1</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg">
+                    <a href="#">Explore Item 2</a>
+                  </li>
                 </ul>
               )}
             </li>
@@ -522,8 +577,12 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 10 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">About us 1</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">About us 2</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">About us 1</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">About us 2</a>
+                        </li>
                       </ul>
                     )}
                   </li>
@@ -536,8 +595,12 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 11 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Agent</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Agent Details</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Agent</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Agent Details</a>
+                        </li>
                       </ul>
                     )}
                   </li>
@@ -550,14 +613,24 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 12 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Blog</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Blog Details</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Blog</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Blog Details</a>
+                        </li>
                       </ul>
                     )}
                   </li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg text-sm"><a href="/listing">Add Listing </a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg text-sm"><a href="/contact">Contact</a></li>
-                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg text-sm"><a href="/pricing">Pricing</a></li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg text-sm">
+                    <a href="/listing">Add Listing </a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg text-sm">
+                    <a href="/contact">Contact</a>
+                  </li>
+                  <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg text-sm">
+                    <a href="/pricing">Pricing</a>
+                  </li>
                   <li className="bg-[#e7cbc4] px-3 py-2 rounded-lg text-sm">
                     <button
                       className="flex justify-between w-full text-sm"
@@ -567,10 +640,18 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 13 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="/login">Login</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="/register">Register</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="/forgot-password">Forgot Password</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="/reset-password">Reset Password</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="/login">Login</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="/register">Register</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="/forgot-password">Forgot Password</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="/reset-password">Reset Password</a>
+                        </li>
                       </ul>
                     )}
                   </li>
@@ -583,7 +664,9 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 14 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">404 Page</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">404 Page</a>
+                        </li>
                       </ul>
                     )}
                   </li>
@@ -596,14 +679,24 @@ export const Forgot_Password = () => {
                     </button>
                     {openNestedSubMenu === 15 && (
                       <ul className="pl-4 mt-2 space-y-2 transition-all duration-300 ease-in-out text-xs">
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Faq Page</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Terms & Conditions</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Icons</a></li>
-                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg"><a href="#">Tables</a></li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Faq Page</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Terms & Conditions</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Icons</a>
+                        </li>
+                        <li className="bg-[#ddac9f] px-3 py-2 rounded-lg">
+                          <a href="#">Tables</a>
+                        </li>
                       </ul>
                     )}
                   </li>
-                  <li><a href="/listing">Study Guide </a></li>
+                  <li>
+                    <a href="/listing">Study Guide </a>
+                  </li>
                 </ul>
               )}
             </li>
@@ -613,180 +706,202 @@ export const Forgot_Password = () => {
           </button>
         </div>
       </div>
-    
 
-    
-
-      {/* Main Content */}
-      <div className="mt-[9rem] pm:mt-[7rem] px-3 flex justify-start items-center mb-10" >
-        {/* left */}
-        <div className="px-40 mb-6 w-1/2 pm:w-full pm:px-2 mx-auto ">
-          <p className="text-[2rem] font-semibold pb-6 pm:text-center">
-            {" "}
-            Password  <span className="text-red-600">
-            Reset
-            </span>{" "}
-          </p>
-          
-        
-          <p>
-          Fill with your mail to receive instructions on how to reset your password.
-          </p>
-          <div className="w-full mx-auto mt-8">
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="email" className="block text-gray-700 mb-1">
-                  Enter Email <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="password" className="block text-gray-700 mb-1">
-                  Password <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    id="password"
-                    className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-                    <button
-                      type="button"
-                      onClick={togglePasswordVisibility}
-                      className="focus:outline-none"
-                    >
-                      {showPassword ? (
-                        <svg
-                          className="h-5 w-5 text-gray-700"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 12h0M12 15h0m-2.208-2.208L9.757 12M9.757 12L8.879 11.122M9.757 12l2.12-2.122M9.757 12l.585-.585m1.036-1.036L12 9.172m-.622-.622L9.757 12m.878-.878l2.121-2.122m.636-.636L15 12h0m0 0H9M15 12a5 5 0 11-10 0 5 5 0 0110 0z"
-                          />
-                        </svg>
-                      ) : (
-                        <svg
-                          className="h-5 w-5 text-gray-700"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13.875 18.825A11.958 11.958 0 0112 19c-5.285 0-9.735-3.437-11.25-8.208A12.002 12.002 0 0112 4.857a12.002 12.002 0 0111.25 5.934c-.506 1.578-1.516 3.01-2.825 4.211M15 12a5 5 0 11-10 0 5 5 0 0110 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9.879 12H15m4.121 0a11.978 11.978 0 01-2.121 3.879M9.879 12L4.121 6.121M15 12h0M9.879 12h.001"
-                          />
-                        </svg>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <label htmlFor="password" className="block text-gray-700 mb-1">
-                  Confirm Password <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    type={showConfirmPassword ? "text" : "password"}
-                    id="confirmPassword"
-                    className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-                    <button
-                      type="button"
-                      onClick={toggleConfirmPasswordVisibility}
-                      className="focus:outline-none"
-                    >
-                      {showConfirmPassword ? (
-                        <svg
-                          className="h-5 w-5 text-gray-700"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 12h0M12 15h0m-2.208-2.208L9.757 12M9.757 12L8.879 11.122M9.757 12l2.12-2.122M9.757 12l.585-.585m1.036-1.036L12 9.172m-.622-.622L9.757 12m.878-.878l2.121-2.122m.636-.636L15 12h0m0 0H9M15 12a5 5 0 11-10 0 5 5 0 0110 0z"
-                          />
-                        </svg>
-                      ) : (
-                        <svg
-                          className="h-5 w-5 text-gray-700"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13.875 18.825A11.958 11.958 0 0112 19c-5.285 0-9.735-3.437-11.25-8.208A12.002 12.002 0 0112 4.857a12.002 12.002 0 0111.25 5.934c-.506 1.578-1.516 3.01-2.825 4.211M15 12a5 5 0 11-10 0 5 5 0 0110 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9.879 12H15m4.121 0a11.978 11.978 0 01-2.121 3.879M9.879 12L4.121 6.121M15 12h0M9.879 12h.001"
-                          />
-                        </svg>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <button className="bg-red-600 w-full py-2 rounded-lg text-white">
-                Reset Password
-              </button>
-              <div className="flex flex-col gap-1 justify-center items-center">
-                <p>Remember your password? <a href="/sign-in" className="underline">Log in</a></p>
-              </div>
-            </form>
+      {/* Main div */}
+      <div className="mt-[6rem] pm:mt-[7rem] mx-6 pm:mx-3">
+        <div
+          className="relative w-full h-[24rem] overflow-hidden bg-cover bg-center rounded-3xl px-32 py-20 pm:h-[30rem] pm:px-4 bg-black pm:pb-8"
+          style={{
+            backgroundImage: `url(${process.env.PUBLIC_URL + "/07.jpg"})`,
+          }}
+        >
+          <div className="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
+          <div className="relative flex flex-col justify-center items-center text-white gap-5 lg:px-64  ">
+            <button className="bg-red-600  px-6 py-1 rounded-3xl">
+              TERMS & CONDITIONS
+            </button>
+            <p className="text-[3rem] text-center">
+              Terms & Conditions<span className=""> Questions</span>
+            </p>
+            <p className="text-center">
+              Many desktop publishing packages and web page editors now use
+              Lorem Ipsum as their default model text, and a search for 'lorem
+              ipsum' will uncover many.
+            </p>
           </div>
         </div>
 
-        {/* right */}
-        <div className="bg-gray-100 py-16 pt-32 flex  flex-col justify-center items-center pm:hidden mr-7 rounded-2xl w-1/2">
-          <div className="mx-10 flex  flex-col justify-center items-center gap-8 ">
-            <p className="text-[1.9rem] font-semibold text-center">
-              {" "}
-              Effortlessly organize your <br/> workspace with ease.
-            </p>
-            <p className="text-center">
-              It is a long established fact that a reader will be distracted by
-              the readable
-              <br />
-              content of a page when looking at its layout.
-            </p>
-            <div className="flex justify-center items-center">
-              <img src="/07.jpg" className="h-[30rem]"></img>
+        <div className="lg:px-32 mt-10 py-12 ">
+          <div className="lg:px-56 flex flex-col justify-center items-center gap-12 ">
+            <div>
+              <h1 className="text-[2.7rem] pm:text-[2rem]">Welcome to the ListOn Terms & conditions</h1>
+              <p className="text-[1.4rem] mt-1 pm:text-[1.4rem] text-gray-700">
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, by
+                injected humour, or randomised words which don't look even
+                slightly believable.
+              </p>
             </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">Personal identification information</h1>
+              <p className="text-gray-700">
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </p>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">Non-personal identification information</h1>
+              <p className="text-gray-700">
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
+                The point of using Lorem Ipsum is that it has a more-or-less
+                normal distribution of letters, as opposed to using 'Content
+                here, content here', making it look like readable English. Many
+                desktop publishing packages and web page editors now use Lorem
+                Ipsum as their default model text.
+              </p>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">Web browser cookies</h1>
+              <p className="text-gray-700">
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, by
+                injected humour, or randomised words which don't look even
+                slightly believable. If you are going to use a passage of Lorem
+                Ipsum, you need to be sure there isn't anything embarrassing
+                hidden.
+              </p>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">How we use collected information</h1>
+              <p className="mb-4 text-gray-700">
+                Contrary to popular belief, Lorem Ipsum is not simply random
+                text. It has roots in a piece of classical:
+              </p>
+              <ul className="list-disc flex  flex-col gap-2 ml-8 text-gray-700">
+                <li>
+                  Donec ultricies purus sed augue tempus, sed porttitor libero
+                  faucibus.
+                </li>
+                <li>
+                  The generated Lorem Ipsum is therefore always free from
+                  repetition, injected humour, or non-characteristic words etc.
+                </li>
+                <li>
+                  All the Lorem Ipsum generators on the Internet tend to repeat
+                  predefined chunks as necessary, making this the first true
+                  generator on the Internet.
+                </li>
+                <li>
+                  It uses a dictionary of over 200 Latin words, combined with a
+                  handful of model sentence structures.
+                </li>
+                <li>
+                  Various versions have evolved over the years, sometimes by
+                  accident, sometimes on purpose.
+                </li>
+                <li>
+                  The point of using Lorem Ipsum is that it has a more-or-less
+                  normal distribution of letters, as opposed to using 'Content
+                  here, content here', making it look like readable English.
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">How we protect your information</h1>
+              <p className="text-gray-700">
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, by
+                injected humour, or randomised words which don't look even
+                slightly believable. If you are going to use a passage of Lorem
+                Ipsum, you need to be sure there isn't anything embarrassing
+                hidden in the middle of text.
+              </p>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">Sharing your personal information</h1>
+              <p className="text-gray-700">
+                All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as necessary, making this the first true
+                generator on the Internet.
+              </p>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">Electronic newsletters</h1>
+              <p className="text-gray-700">
+                It uses a dictionary of over 200 Latin words, combined with a
+                handful of model sentence structures, to generate Lorem Ipsum
+                which looks reasonable.
+              </p>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">Advertising</h1>
+              <p className="text-gray-700">
+                There are many variations of passages of Lorem Ipsum available,
+                but the majority have suffered alteration in some form, by
+                injected humour, or randomised words which don't look even
+                slightly believable. If you are going to use a passage of Lorem
+                Ipsum, you need to be sure there isn't anything embarrassing
+                hidden in the middle of text. All the Lorem Ipsum generators on
+                the Internet tend to repeat predefined chunks as necessary,
+                making this the first true generator on the Internet.
+              </p>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">Aenean tincidunt tellus</h1>
+              <p className="text-gray-700">
+                It was popularised in the 1960s with the release of Letraset
+                sheets containing Lorem Ipsum passages, and more recently with
+                desktop publishing software like Aldus PageMaker including
+                versions of Lorem Ipsum. All the Lorem Ipsum generators on the
+                Internet tend to repeat predefined chunks as necessary, making
+                this the first true generator on the Internet. It uses a
+                dictionary of over 200 Latin words, combined with a handful of
+                mode
+              </p>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">Changes to this privacy policy</h1>
+              <p className="text-gray-700">
+                All the Lorem Ipsum generators on the Internet tend to repeat
+                predefined chunks as necessary, making this the first true
+                generator on the Internet. It uses a dictionary of over 200
+                Latin words, combined with a handful of mode
+              </p>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">Your acceptance of these terms</h1>
+              <p className="text-gray-700">
+                Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de
+                Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by
+                Cicero, written in 45 BC. This book is a treatise on the theory
+                of ethics, very popular during the Renaissance. The first line
+                of Lorem Ipsum.
+              </p>
+            </div>
+            <div>
+              <h1 className="text-[2rem] mb-3 pm:text-[1.5rem]">Contacting us</h1>
+              <p className="text-gray-700">
+                Many desktop publishing packages and web page editors now use
+                Lorem Ipsum as their default model text, and a search for 'lorem
+                ipsum' will uncover many web sites still in their infancy.
+              </p>
+            </div>
+            <p className="text-gray-700">
+              It is a long established fact that a reader will be distracted by
+              the readable content of a page when looking at its layout.
+            </p>
           </div>
         </div>
       </div>
-
       {/* footer */}
       <div className="bg-[#191e25] lg:px-40 pm:px-5 lg:pt-36 pm:pt-20 pb-2">
         <div className="bg-[#f84525] w-full lg:h-48 pm:h-[36rem] relative lg:px-32 pm:px-4 rounded-2xl pm:flex pm:flex-col pm:justify-start pm:items-center ">

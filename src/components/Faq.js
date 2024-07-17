@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import FAQ from "./F&Qs";
 
-export const Forgot_Password = () => {
+export const Faq = () => {
   const [Nav, setNav] = useState(false);
 
-  
   const [openSubMenu, setOpenSubMenu] = useState(null); 
   const [openNestedSubMenu, setOpenNestedSubMenu] = useState(null); 
 
@@ -28,25 +27,10 @@ export const Forgot_Password = () => {
   };
 
 
-  const [showPassword, setShowPassword] = useState(false);
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
-
-
-  const togglePasswordVisibility = () => {
-    setShowPassword(!showPassword);
-  };
-
- 
-  const toggleConfirmPasswordVisibility = () => {
-    setShowConfirmPassword(!showConfirmPassword);
-  };
-
-
-
 
   return (
     <>
-      {/* header */}
+      {/* Header */}
       <div className="fixed top-0 bg-white w-full z-50">
         <div className=" container  px-4 py-4 flex justify-start items-center  pm:hidden ">
           <div className="flex items-center lg:px-10">
@@ -615,309 +599,169 @@ export const Forgot_Password = () => {
       </div>
     
 
-    
+      {/* Main div */}
+      <div className="mt-[6rem] pm:mt-[7rem] mx-6 pm:mx-3">
+      <div
+      className="relative w-full h-[24rem] overflow-hidden bg-cover bg-center rounded-3xl px-32 py-20 pm:h-[30rem] pm:px-4 bg-black pm:pb-8"
+      style={{
+        backgroundImage: `url(${process.env.PUBLIC_URL + "/07.jpg"})`,
+      }}
+    >
+      <div className="absolute inset-0 bg-black opacity-50 rounded-3xl"></div>
+      <div className="relative flex flex-col justify-center items-center text-white gap-5 lg:px-64  ">
+        <button className="bg-red-600  px-6 py-1 rounded-3xl">FAQ</button>
+        <p className="text-[3rem] text-center">Frequently Asked <span className=""> Questions</span></p>
+        <p className="text-center">Many desktop publishing packages and web page editors now use Lorem Ipsum as their
+        default model text, and a search for 'lorem ipsum' will uncover many.</p>
+      </div>
+    </div>
 
-      {/* Main Content */}
-      <div className="mt-[9rem] pm:mt-[7rem] px-3 flex justify-start items-center mb-10" >
-        {/* left */}
-        <div className="px-40 mb-6 w-1/2 pm:w-full pm:px-2 mx-auto ">
-          <p className="text-[2rem] font-semibold pb-6 pm:text-center">
-            {" "}
-            Password  <span className="text-red-600">
-            Reset
-            </span>{" "}
-          </p>
-          
-        
-          <p>
-          Fill with your mail to receive instructions on how to reset your password.
-          </p>
-          <div className="w-full mx-auto mt-8">
-            <form className="space-y-6">
-              <div>
-                <label htmlFor="email" className="block text-gray-700 mb-1">
-                  Enter Email <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    type="email"
-                    id="email"
-                    className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
-                  />
+        <div className="mx-1 ">
+          <div className="rounded-3xl px-32 pb-20 pm:px-2">
+            <div className="pt-20 pb-12">
+                <div className="px-48 mt-16 pm:px-1">
+                <FAQ/>
                 </div>
-              </div>
-
-              <div>
-                <label htmlFor="password" className="block text-gray-700 mb-1">
-                  Password <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    type={showPassword ? "text" : "password"}
-                    id="password"
-                    className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-                    <button
-                      type="button"
-                      onClick={togglePasswordVisibility}
-                      className="focus:outline-none"
-                    >
-                      {showPassword ? (
-                        <svg
-                          className="h-5 w-5 text-gray-700"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 12h0M12 15h0m-2.208-2.208L9.757 12M9.757 12L8.879 11.122M9.757 12l2.12-2.122M9.757 12l.585-.585m1.036-1.036L12 9.172m-.622-.622L9.757 12m.878-.878l2.121-2.122m.636-.636L15 12h0m0 0H9M15 12a5 5 0 11-10 0 5 5 0 0110 0z"
-                          />
-                        </svg>
-                      ) : (
-                        <svg
-                          className="h-5 w-5 text-gray-700"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13.875 18.825A11.958 11.958 0 0112 19c-5.285 0-9.735-3.437-11.25-8.208A12.002 12.002 0 0112 4.857a12.002 12.002 0 0111.25 5.934c-.506 1.578-1.516 3.01-2.825 4.211M15 12a5 5 0 11-10 0 5 5 0 0110 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9.879 12H15m4.121 0a11.978 11.978 0 01-2.121 3.879M9.879 12L4.121 6.121M15 12h0M9.879 12h.001"
-                          />
-                        </svg>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <label htmlFor="password" className="block text-gray-700 mb-1">
-                  Confirm Password <span className="text-red-500">*</span>
-                </label>
-                <div className="relative">
-                  <input
-                    type={showConfirmPassword ? "text" : "password"}
-                    id="confirmPassword"
-                    className="w-full px-4 py-2 border-2 border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
-                  />
-                  <div className="absolute inset-y-0 right-0 pr-3 flex items-center">
-                    <button
-                      type="button"
-                      onClick={toggleConfirmPasswordVisibility}
-                      className="focus:outline-none"
-                    >
-                      {showConfirmPassword ? (
-                        <svg
-                          className="h-5 w-5 text-gray-700"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M15 12h0M12 15h0m-2.208-2.208L9.757 12M9.757 12L8.879 11.122M9.757 12l2.12-2.122M9.757 12l.585-.585m1.036-1.036L12 9.172m-.622-.622L9.757 12m.878-.878l2.121-2.122m.636-.636L15 12h0m0 0H9M15 12a5 5 0 11-10 0 5 5 0 0110 0z"
-                          />
-                        </svg>
-                      ) : (
-                        <svg
-                          className="h-5 w-5 text-gray-700"
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                        >
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M13.875 18.825A11.958 11.958 0 0112 19c-5.285 0-9.735-3.437-11.25-8.208A12.002 12.002 0 0112 4.857a12.002 12.002 0 0111.25 5.934c-.506 1.578-1.516 3.01-2.825 4.211M15 12a5 5 0 11-10 0 5 5 0 0110 0z"
-                          />
-                          <path
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            strokeWidth={2}
-                            d="M9.879 12H15m4.121 0a11.978 11.978 0 01-2.121 3.879M9.879 12L4.121 6.121M15 12h0M9.879 12h.001"
-                          />
-                        </svg>
-                      )}
-                    </button>
-                  </div>
-                </div>
-              </div>
-              <button className="bg-red-600 w-full py-2 rounded-lg text-white">
-                Reset Password
-              </button>
-              <div className="flex flex-col gap-1 justify-center items-center">
-                <p>Remember your password? <a href="/sign-in" className="underline">Log in</a></p>
-              </div>
-            </form>
-          </div>
-        </div>
-
-        {/* right */}
-        <div className="bg-gray-100 py-16 pt-32 flex  flex-col justify-center items-center pm:hidden mr-7 rounded-2xl w-1/2">
-          <div className="mx-10 flex  flex-col justify-center items-center gap-8 ">
-            <p className="text-[1.9rem] font-semibold text-center">
-              {" "}
-              Effortlessly organize your <br/> workspace with ease.
-            </p>
-            <p className="text-center">
-              It is a long established fact that a reader will be distracted by
-              the readable
-              <br />
-              content of a page when looking at its layout.
-            </p>
-            <div className="flex justify-center items-center">
-              <img src="/07.jpg" className="h-[30rem]"></img>
             </div>
           </div>
         </div>
       </div>
-
       {/* footer */}
       <div className="bg-[#191e25] lg:px-40 pm:px-5 lg:pt-36 pm:pt-20 pb-2">
-        <div className="bg-[#f84525] w-full lg:h-48 pm:h-[36rem] relative lg:px-32 pm:px-4 rounded-2xl pm:flex pm:flex-col pm:justify-start pm:items-center ">
-          <img
-            src={process.env.PUBLIC_URL + "/07.jpg"}
-            className="absolute bottom-0 lg:w-[16rem] lg:h-[17rem] pm:w-52 pm:h-44  "
-          ></img>
-          <div className="lg:absolute lg:left-[33%] lg:py-11 lg:w-[30%] pm:flex pm:flex-col pm:justify-center pm:items-center pm:mt-12">
-            <h1 className="text-2xl text-white  font-semibold mb-3  ">
-              Download Our App
-            </h1>
-            <p className="text-lg text-white ">
-              It is a long established fact that a reader will be distracted by
-              the readable content.
-            </p>
-          </div>
-          <div className="lg:flex lg:absolute lg:right-20 gap-3 py-16 text-white ">
-            <button className="w-48 h-16 border border-white rounded-lg flex px-4 py-2 items-center pm:mb-4">
-              <i className="fa-brands fa-apple text-3xl"></i>
-              <p className="text-sm">
-                Available on the <span className="text-xl">App Store</span>
+          <div className="bg-[#f84525] w-full lg:h-48 pm:h-[36rem] relative lg:px-32 pm:px-4 rounded-2xl pm:flex pm:flex-col pm:justify-start pm:items-center ">
+            <img
+              src={process.env.PUBLIC_URL + "/07.jpg"}
+              className="absolute bottom-0 lg:w-[16rem] lg:h-[17rem] pm:w-52 pm:h-44  "
+            ></img>
+            <div className="lg:absolute lg:left-[33%] lg:py-11 lg:w-[30%] pm:flex pm:flex-col pm:justify-center pm:items-center pm:mt-12">
+              <h1 className="text-2xl text-white  font-semibold mb-3  ">
+                Download Our App
+              </h1>
+              <p className="text-lg text-white ">
+                It is a long established fact that a reader will be distracted
+                by the readable content.
               </p>
-            </button>
-            <button className="w-48 h-16 border border-white rounded-lg flex px-4 py-2 items-center">
-              <i className="fa-brands fa-google-play text-3xl"></i>
-              <p className="text-sm">
-                Available on the <span className="text-xl">App Store</span>
-              </p>
-            </button>
-          </div>
-        </div>
-        <hr className="mt-16 border-gray-500"></hr>
-        <div className="flex pm:flex-col justify-between gap-20 items-start text-white lg:py-14 pm:mt-8 ">
-          <div className="lg:w-1/3">
-            <h1 className="text-2xl text-white font-semibold mb-8">
-              Get In Touch
-            </h1>
-            <p className="mb-8">
-              Join our newsletter and receive the best job openings of the week,
-              right on your inbox.
-            </p>
-            <div className="w-[25rem] h-32 border border-gray-700 rounded-2xl p-10 mb-8">
-              <p className="text-xl text-gray-500 mb-2">Join our Whatapp:</p>
-              <i className="fa-brands fa-whatsapp text-2xl"> (123) 456-7890</i>
             </div>
-            <h3 className="text-xl font-semibold lg:mb-8 pm:mb-1">
-              Want to join ListOn? <br /> Write us !
-            </h3>
-            <p>support@ListOn.com</p>
-          </div>
-          <hr className="lg:border border-gray-500 lg:h-[27rem] pm:h-[0rem]"></hr>
-          <div className="lg:w-1/3 pm:-mt-28">
-            <h2 className="text-2xl font-semibold mb-8">Stay Connect</h2>
-            <p className="mb-8 text-lg">
-              1123 Fictional St, San Francisco, CA 94103
-            </p>
-            <div className="flex flex-col ">
-              <div>
-                <i className="fa-solid fa-phone text mr-2"> </i> (123) 456-7890
-              </div>{" "}
-              <br />
-              <div>
-                <i className="fa-solid fa-envelope text mr-2"> </i>
-                support@ListOn.com
-              </div>
+            <div className="lg:flex lg:absolute lg:right-20 gap-3 py-16 text-white ">
+              <button className="w-48 h-16 border border-white rounded-lg flex px-4 py-2 items-center pm:mb-4">
+                <i className="fa-brands fa-apple text-3xl"></i>
+                <p className="text-sm">
+                  Available on the <span className="text-xl">App Store</span>
+                </p>
+              </button>
+              <button className="w-48 h-16 border border-white rounded-lg flex px-4 py-2 items-center">
+                <i className="fa-brands fa-google-play text-3xl"></i>
+                <p className="text-sm">
+                  Available on the <span className="text-xl">App Store</span>
+                </p>
+              </button>
             </div>
           </div>
-          <hr className="lg:border border-gray-500 lg:h-[27rem]"></hr>
-
-          <div>
-            <div>
-              <h1 className="mb-8 text-2xl font-semibold pm:-mt-20">
+          <hr className="mt-16 border-gray-500"></hr>
+          <div className="flex pm:flex-col justify-between gap-20 items-start text-white lg:py-14 pm:mt-8 ">
+            <div className="lg:w-1/3">
+              <h1 className="text-2xl text-white font-semibold mb-8">
                 Get In Touch
               </h1>
-              <div className="relative w-[25rem]  h-16 ">
-                <input
-                  type="text"
-                  placeholder="name@example.com"
-                  className="bg-[#191e25] w-full h-16 rounded-full pl-8 pr-16"
-                />
-                <div className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#f84525] w-10 h-10 rounded-full flex items-center justify-center">
-                  <i className="fa-solid fa-chevron-right text-white"></i>
+              <p className="mb-8">
+                Join our newsletter and receive the best job openings of the
+                week, right on your inbox.
+              </p>
+              <div className="w-[25rem] h-32 border border-gray-700 rounded-2xl p-10 mb-8">
+                <p className="text-xl text-gray-500 mb-2">Join our Whatapp:</p>
+                <i className="fa-brands fa-whatsapp text-2xl">
+                  {" "}
+                  (123) 456-7890
+                </i>
+              </div>
+              <h3 className="text-xl font-semibold lg:mb-8 pm:mb-1">
+                Want to join ListOn? <br /> Write us !
+              </h3>
+              <p>support@ListOn.com</p>
+            </div>
+            <hr className="lg:border border-gray-500 lg:h-[27rem] pm:h-[0rem]"></hr>
+            <div className="lg:w-1/3 pm:-mt-28">
+              <h2 className="text-2xl font-semibold mb-8">Stay Connect</h2>
+              <p className="mb-8 text-lg">
+                1123 Fictional St, San Francisco, CA 94103
+              </p>
+              <div className="flex flex-col ">
+                <div>
+                  <i className="fa-solid fa-phone text mr-2"> </i> (123)
+                  456-7890
+                </div>{" "}
+                <br />
+                <div>
+                  <i className="fa-solid fa-envelope text mr-2"> </i>
+                  support@ListOn.com
                 </div>
               </div>
             </div>
-            <hr className="my-8 border-gray-500"></hr>
+            <hr className="lg:border border-gray-500 lg:h-[27rem]"></hr>
+
             <div>
-              <h2 className="mb-8 text-2xl font-semibold">
-                Follow the Location
-              </h2>
-              <div className="flex justify-start items-center gap-2">
-                <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i className="fa-brands fa-instagram fa-xl"></i>
+              <div>
+                <h1 className="mb-8 text-2xl font-semibold pm:-mt-20">
+                  Get In Touch
+                </h1>
+                <div className="relative w-[25rem]  h-16 ">
+                  <input
+                    type="text"
+                    placeholder="name@example.com"
+                    className="bg-[#191e25] w-full h-16 rounded-full pl-8 pr-16"
+                  />
+                  <div className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-[#f84525] w-10 h-10 rounded-full flex items-center justify-center">
+                    <i className="fa-solid fa-chevron-right text-white"></i>
+                  </div>
                 </div>
-                <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i className="fa-brands fa-twitter fa-xl"></i>
-                </div>
-                <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i className="fa-brands fa-dribbble fa-xl"></i>
-                </div>
-                <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i className="fa-brands fa-facebook-f fa-xl"></i>
-                </div>
-                <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
-                  <i className="fa-brands fa-whatsapp fa-xl"></i>
+              </div>
+              <hr className="my-8 border-gray-500"></hr>
+              <div>
+                <h2 className="mb-8 text-2xl font-semibold">
+                  Follow the Location
+                </h2>
+                <div className="flex justify-start items-center gap-2">
+                  <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
+                    <i className="fa-brands fa-instagram fa-xl"></i>
+                  </div>
+                  <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
+                    <i className="fa-brands fa-twitter fa-xl"></i>
+                  </div>
+                  <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
+                    <i className="fa-brands fa-dribbble fa-xl"></i>
+                  </div>
+                  <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
+                    <i className="fa-brands fa-facebook-f fa-xl"></i>
+                  </div>
+                  <div className="w-12 h-12 bg-gray-600 flex justify-center items-center rounded-full">
+                    <i className="fa-brands fa-whatsapp fa-xl"></i>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <hr className="mt-6 mb-6 border-gray-500"></hr>
-        <div className="flex pm:flex-col justify-between items-center">
-          <div className="flex pm:flex-col justify-center pm:items-start items-center gap-4">
-            <img
-              src={process.env.PUBLIC_URL + "/brand.png"}
-              className="w-40"
-            ></img>
-            <hr className="lg:border border-gray-500 h-10 mx-4"></hr>
-            <p className="text-white text-lg pm:-mt-12">
-              © 2022 ListOn - All Rights Reserved- All Rights Reserved
-            </p>
+          <hr className="mt-6 mb-6 border-gray-500"></hr>
+          <div className="flex pm:flex-col justify-between items-center">
+            <div className="flex pm:flex-col justify-center pm:items-start items-center gap-4">
+              <img
+                src={process.env.PUBLIC_URL + "/brand.png"}
+                className="w-40"
+              ></img>
+              <hr className="lg:border border-gray-500 h-10 mx-4"></hr>
+              <p className="text-white text-lg pm:-mt-12">
+                © 2022 ListOn - All Rights Reserved- All Rights Reserved
+              </p>
+            </div>
+            <div className="text-gray-500 flex justify-start items-center  gap-3 text-lg">
+              <a href="">Priavcy</a>
+              <p>/</p>
+              <a href="">Sitemap</a>
+              <p>/</p>
+              <a href="">Cookies</a>
+            </div>
           </div>
-          <div className="text-gray-500 flex justify-start items-center  gap-3 text-lg">
-            <a href="">Priavcy</a>
-            <p>/</p>
-            <a href="">Sitemap</a>
-            <p>/</p>
-            <a href="">Cookies</a>
-          </div>
         </div>
-      </div>
+        
     </>
   );
 };

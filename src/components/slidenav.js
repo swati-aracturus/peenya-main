@@ -3,10 +3,7 @@
   import AOS from "aos";
   import "aos/dist/aos.css";
   function Slide() {
-    useEffect(() => {
-      AOS.init();
-    }, []);
-  
+    
     const [Nav, setNav] = useState(false);
 
     const [openSubMenu, setOpenSubMenu] = useState(null); 
@@ -319,7 +316,7 @@
         </div>
       </div>
 
-      <div className="fixed top-0 bg-white w-full z-50 flex h-20 p-3  lg:hidden ">
+      <div className="fixed top-0 bg-white  z-50 flex h-20 p-3  lg:hidden mt-4 ml-3 mr-3 mx-auto rounded-xl">
         <nav className="flex justify-between items-center w-full ">
           <img src="/brand.png" className="w-28"></img>
           <div className="flex justify-center items-center list-none gap-2">
@@ -333,11 +330,8 @@
               <i className="fa-solid fa-user-plus fa-lg"></i>
             </div>
 
-            <div className="ml-2">
-              <i className="fa-solid fa-moon fa-lg"></i>
-            </div>
-
-            <div className="flex jus items-center">
+           
+            <div className="flex jus items-center pr-2">
               {" "}
               <button className="ml-2" onClick={() => setNav(!Nav)}>
                 {Nav ? (
@@ -352,7 +346,7 @@
       </div>
 
       <div
-        className={`transition-all duration-300 ease-in-out shadow-lg fixed w-full z-[999] top-20 lg:hidden ${
+        className={`transition-all duration-300 ease-in-out shadow-lg fixed w-[92.8%] z-[999] top-20 lg:hidden ml-3 mr-3 mx-auto rounded-xl ${
           Nav ? "max-h-screen" : "max-h-0"
         } overflow-hidden`}
       >

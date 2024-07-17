@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 import CardSwiper from "./Testing";
 
-const Registration = () => {
+export const Home = () => {
+
+
+  useEffect(() => {
+    AOS.init({ duration: 1200 });
+
+    // Force a reinitialization of AOS after the component has mounted
+    setTimeout(() => {
+      AOS.refresh();
+    }, 500); // Delay to ensure the DOM is fully loaded
+  }, []);
+
+
+
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const testimonials = [
     {
@@ -28,13 +43,13 @@ const Registration = () => {
   };
 
   const cards = Array.from({ length: 5 }, (_, index) => (
-    <div key={index} className="card mr-10 pm:mx-4 flex p-0 pm:flex-wrap">
+    <div key={index} className="card mr-10 pm:mx-4 flex p-0 pm:flex-wrap transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
       <img
         alt="ecommerce"
         className="w-full h-64 object-cover object-center rounded lg:w-1/2 lg:h-auto"
-        src="https://stackdiary.com/140x100.png"
+        src="/07.jpg"
       />
-      <div className="w-full mt-6 ml-4 ps:ml-0">
+      <div className="w-full mt-6 ml-4 ps:ml-0 px-3">
         <div className="flex justify-between items-center">
           <div className="align-items-center d-flex flex-wrap gap-1 text-primary text-justify text-red-500 card-justify mb-2">
             <i className="fa-solid fa-star pm:text-sm"></i>
@@ -82,7 +97,7 @@ const Registration = () => {
             </a>
           </div>
         </div>
-        <div className="pm:mx-4">
+        <div className="pm:mx-4 ">
           {" "}
           <h1 className="text-gray-900 text-2xl pm:text-lg title-font font-medium mb-1 mt-4 text-justify">
             Green Mart Apartments
@@ -141,7 +156,7 @@ const Registration = () => {
             data-aos="fade-down"
             data-aos-delay="400"
           >
-            <p className="text-center text-4xlpm:text-lg text-[#F84525]">
+            <p className="text-center font-caveat text-4xl pm:text-lg text-[#F84525]">
               Categories
             </p>
             <h1 className="text-5xl text-white font-semibold pm:text-2xl text-center pt-4 pb-0 pm:pb-2 pm:leading-3">
@@ -156,7 +171,7 @@ const Registration = () => {
           </div>
         </div>
         <div className="flex flex-wrap w-[85%] pm:w-[95%] mx-auto pt-[5%] ">
-          <div className="w-1/3 pm:w-full px-2 mb-4">
+          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -171,7 +186,7 @@ const Registration = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 pm:w-full px-2 mb-4">
+          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -186,7 +201,7 @@ const Registration = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 pm:w-full px-2 mb-4">
+          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -203,7 +218,7 @@ const Registration = () => {
           </div>
         </div>
         <div className="flex flex-wrap w-[85%] pm:w-[95%] mx-auto pb-[2%]">
-          <div className="w-1/3 pm:w-full px-2 mb-4">
+          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -218,7 +233,7 @@ const Registration = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 pm:w-full px-2 mb-4">
+          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -233,7 +248,7 @@ const Registration = () => {
               </button>
             </div>
           </div>
-          <div className="w-1/3 pm:w-full px-2 mb-4">
+          <div className="w-1/3 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
                 <img src="/fg.png" />
@@ -253,7 +268,7 @@ const Registration = () => {
 
       <div className="flex justify-center ">
         <div className="pt-[5%] pm:pt-[20%]">
-          <p className="text-center text-4xl pm:text-lg text-[#F84525]">
+          <p className="text-center text-4xl pm:text-lg text-[#F84525] font-caveat">
             Best Way
           </p>
           <h1 className="text-5xl font-semibold w-4/5 mx-auto pm:text-4xl text-center pt-4 pm:pt-1 pm:leading-10">
@@ -344,7 +359,7 @@ const Registration = () => {
             data-aos="fade-down"
             data-aos-delay="400"
           >
-            <p className="text-center text-4xl pm:text-lg text-white ">
+            <p className="text-center text-4xl pm:text-lg text-white font-caveat">
               Top Regions
             </p>
             <h1 className="text-5xl text-white font-semibold pm:text-2xl text-center pt-4 pb-0 pm:pb-2 pm:leading-3">
@@ -360,7 +375,7 @@ const Registration = () => {
             <div className="flex pm:flex-wrap justify-center align-center w-full pm:px-0 px-16">
               <div className="w-1/2 pm:w-full">
                 <h1 className="pl-[10%] pm:px-4 py-6 pm:text-2xl text-[50px] justify-center text-white">
-                  Find your perfect Place based on your interest
+                  Find your perfect Place based on  <span className="font-caveat text-[40px]"> your interest</span>
                 </h1>
                 <img
                   className="px-[5%] rounded-[10%] "
@@ -402,8 +417,9 @@ const Registration = () => {
       </div>
 
       <div className="flex pm:flex-wrap justify-center align-center w-full py-[5%]  mx-auto">
-        <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] py-6">
-          <p className=" text-4xlpm:text-lg text-[#F84525] pm:text-center">
+      {/* <div className=""> */}
+        <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] pt-6 lg:overflow-y-auto lg:sticky lg:top-0 lg:h-screen">
+          <p className=" text-4xl pm:text-lg text-[#F84525] pm:text-center font-caveat">
             Places
           </p>
           <h1 className="text-5xl font-medium pm:text-2xl pm:text-center pt-4 pm:pt-1 pm:leading-6 pb-0 pm:pb-2 ">
@@ -434,14 +450,16 @@ const Registration = () => {
             ></path>
           </svg>
         </div>
+        {/* </div> */}
         <div className="w-[60%] pm:w-[100%] pm:pl-0 pl-[4%] ">
           <div className="">{cards}</div>
         </div>
       </div>
+
 
       <Footer />
     </>
   );
 };
 
-export default Registration;
+
