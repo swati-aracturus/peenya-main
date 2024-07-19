@@ -975,3 +975,13 @@ number-circle {
     background-repeat: no-repeat;
     background-size: auto;
 }
+
+.contaiz{
+    overflow-x: scroll; 
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+}
+
+.contaiz::-webkit-scrollbar {
+    display: none;  /* Safari and Chrome */
+  }

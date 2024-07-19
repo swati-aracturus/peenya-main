@@ -80,11 +80,10 @@ export const Home = () => {
             Green Mart Apartments
           </h1>
           <p className="leading-relaxed pm:text-sm text-justify">
-            Dui urna vehicula tincidunt pretium consequat luctus mi, platea
-            fermentum conubia tempus ac orci.
+            Dui urna vehicula tincidunt pretium consequat luctus mi
           </p>
         </div>
-        <div className="flex mt-9 pm:mt-4 pm:mb-10 justify-justify items-center gap-4">
+        <div className="flex  mt-8 mb-4 pm:mt-4 pm:mb-10 justify-justify items-center gap-4">
           <a
             href="tel:+4733378901"
             className="flex gap-2 items-center fs-13 fw-semibold"
@@ -429,7 +428,7 @@ export const Home = () => {
 
       <div className="flex pm:flex-wrap justify-center align-center w-full py-[5%]  mx-auto">
         {/* <div className=""> */}
-        <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] pt-6 lg:overflow-y-auto lg:sticky lg:top-0 lg:h-screen">
+        <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] pt-6 lg:overflow-y-auto lg:sticky lg:top-0 lg:h-screen contaiz">
           <p className=" text-[2rem] pm:text-lg text-[#F84525] pm:text-center font-caveat pm:text-[1.37rem]">
             Places
           </p>
@@ -462,7 +461,7 @@ export const Home = () => {
           </svg>
         </div>
         {/* </div> */}
-        <div className="w-[60%] pm:w-[100%] pm:pl-0 pl-[4%] ">
+        <div className="w-[60%] pm:w-[100%] pm:pl-0 pl-[4%] contaiz">
           <div className="">{cards}</div>
         </div>
       </div>
