@@ -1,14 +1,12 @@
 import React, { useState, useEffect, useRef } from "react";
 import Header from "../components/header";
 import Footer from "../components/footer";
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 import CardSwiper from "./Testing";
 
 export const Home = () => {
-
-
   useEffect(() => {
     AOS.init({ duration: 1200 });
 
@@ -18,11 +16,11 @@ export const Home = () => {
     }, 500); // Delay to ensure the DOM is fully loaded
   }, []);
 
-
-
- 
   const cards = Array.from({ length: 9 }, (_, index) => (
-    <div key={index} className="card mr-10 pm:mx-4 flex p-0 pm:flex-wrap transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
+    <div
+      key={index}
+      className="card mr-10 pm:mx-4 flex p-0 pm:flex-wrap transition-transform duration-300 ease-in-out hover:translate-y-[-10px]"
+    >
       <img
         alt="ecommerce"
         className="w-full h-64 object-cover object-center rounded lg:w-1/2 lg:h-auto"
@@ -256,7 +254,7 @@ export const Home = () => {
                 <a href="#">↑ &nbsp;&nbsp;</a>
               </button>
             </div>
-          </div>  
+          </div>
           <div className="w-1/4 pm:w-full px-2 mb-4 transition-transform duration-300 ease-in-out hover:translate-y-[-10px]">
             <div className="bg-[#434343] py-4 px-5 text-sm text-grey-dark flex items-center rounded-xl justify-between">
               <div className="py-1 px-1 bg-[#121111] rounded-xl">
@@ -280,101 +278,101 @@ export const Home = () => {
           <p className="text-center text-[2.5rem] pm:text-lg text-[#F84525] font-caveat">
             Best Way
           </p>
-          <h1 className="text-[3rem] font-semibold w-4/5 mx-auto pm:text-4xl text-center pt-4 pm:pt-1 pm:leading-10">
+          <h1 className="text-[3rem] font-semibold w-[90%] mx-auto pm:text-4xl text-center pt-2 pm:pt-1 pm:leading-10">
             Find Your Dream Place The Best Way
           </h1>
-          <p className="text-center mx-auto text-lg font-medium py-6 pm:pt-2 pm:text-sm pm:w-[80%]">
+          <p className="text-center mx-auto font-medium py-6  pt-2 pm:pt-2 pm:text-sm pm:w-[80%]">
             Discover exciting categories.{" "}
             <span className="text-[#F84525]">Find what you’re looking for</span>{" "}
           </p>
         </div>
       </div>
-
-      <div className="bg-no-repeat numbers-wrapper pb-[5%]">
-        <div className="row g-4 pm:pb-[3%]">
-          <div className="col-md-4 pm:my-[5%]">
-            <div
-              className="mx-xl-4 number-wrap text-center aos-init aos-animate"
-              data-aos="fade"
-              data-aos-delay="400"
-            >
+      <div className=" mx-16 px-10 ">
+        <div className="bg-no-repeat numbers-wrapper pb-[5%]">
+          <div className="row g-4 pm:pb-[3%]  ">
+            <div className="col-md-4 pm:my-[5%] px-6 -ml-3">
               <div
-                className="align-items-center bg-primary text-[40px] d-flex font-caveat pm:w-[80px] pm:h-[80px] w-[100px] h-[100px] fs-1 
+                className="mx-xl-4 number-wrap text-center aos-init aos-animate"
+                data-aos="fade"
+                data-aos-delay="400"
+              >
+                <div
+                  className="align-items-center bg-primary text-[40px] d-flex font-caveat pm:w-[80px] pm:h-[72px] w-[72px] h-[72px] fs-1 
                             justify-content-center mb-4 mx-auto number-circle rounded-circle text-white "
-              >
-                {" "}
-                <div className="translate-y-4 pm:translate-y-2">1</div>
+                >
+                  {" "}
+                  <div className="translate-y-2 pm:translate-y-2">1</div>
+                </div>
+                <h4 className="pm:w-[80%]  pm:mx-auto pb-2 text-2xl">
+                  Input your location to start looking for landmarks.
+                </h4>
+                <p className="fs-15 pm:px-2 pm:mx-auto m-0 opacity-75">
+                  orem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pharetra vitae quam integer semper.
+                </p>
               </div>
-              <h4 className="pm:w-[80%] font-semibold pm:mx-auto">
-                Input your location to start looking for landmarks.
-              </h4>
-              <p className="fs-15 pm:px-2 pm:mx-auto m-0 opacity-75">
-                orem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra
-                vitae quam integer semper.
-              </p>
             </div>
-          </div>
-          <div className="col-md-4 mt-[4%] pm:my-[5%]">
-            <div
-              className="mx-xl-4 number-wrap text-center second aos-init aos-animate"
-              data-aos="fade"
-              data-aos-delay="700"
-            >
+            <div className="col-md-4 mt-[4%] pm:my-[5%] ">
               <div
-                className="align-items-center bg-primary text-[40px] d-flex font-caveat pm:w-[80px] pm:h-[80px] w-[100px] h-[100px] fs-1 
-                            justify-content-center mb-4 mx-auto number-circle rounded-circle text-white"
+                className="mx-xl-4 number-wrap text-center second aos-init aos-animate"
+                data-aos="fade"
+                data-aos-delay="700"
               >
-                {" "}
-                <div className="translate-y-4 pm:translate-y-2">2</div>
+                <div
+                  className="align-items-center bg-primary text-[40px] d-flex font-caveat pm:w-[80px] pm:h-[80px] w-[72px] h-[72px] fs-1 
+                            justify-content-center mb-4 mx-auto number-circle rounded-circle text-white"
+                >
+                  {" "}
+                  <div className="translate-y-2 pm:translate-y-2">2</div>
+                </div>
+                <h4 className="pm:w-[80%]  pm:mx-auto pb-2 text-2xl">
+                  Make an appointment at the place you want to visit.
+                </h4>
+                <p className="fs-15 m-0 pm:px-2 opacity-75">
+                  orem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pharetra vitae quam integer.
+                </p>
               </div>
-              <h4 className="pm:w-[90%] font-semibold pm:mx-auto">
-                Make an appointment at the place you want to visit.
-              </h4>
-              <p className="fs-15 m-0 pm:px-2 opacity-75">
-                orem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra
-                vitae quam integer.
-              </p>
             </div>
-          </div>
-          <div className="col-md-4 pm:my-[5%]">
-            <div
-              className="mx-xl-4 number-wrap text-center aos-init aos-animate"
-              data-aos="fade"
-              data-aos-delay="1000"
-            >
+            <div className="col-md-4 pm:my-[5%] ml-3">
               <div
-                className="align-items-center bg-primary d-flex text-[40px] font-caveat pm:w-[80px] pm:h-[80px] w-[100px] h-[100px] fs-1 
-                            justify-content-center mb-4 mx-auto number-circle rounded-circle text-white"
+                className="mx-xl-4 number-wrap text-center aos-init aos-animate"
+                data-aos="fade"
+                data-aos-delay="1000"
               >
-                {" "}
-                <div className="translate-y-4 pm:translate-y-2">3</div>
+                <div
+                  className="align-items-center bg-primary d-flex text-[40px] font-caveat pm:w-[80px] pm:h-[80px] w-[72px] h-[72px] fs-1 
+                            justify-content-center mb-4 mx-auto number-circle rounded-circle text-white"
+                >
+                  {" "}
+                  <div className="translate-y-2 pm:translate-y-2">3</div>
+                </div>
+                <h4 className="pm:w-[80%] text-2xl pb-2 pm:mx-auto">
+                  Visit the place and enjoy the experience.
+                </h4>
+                <p className="fs-15 m-0 pm:px-2 opacity-75">
+                  orem ipsum dolor sit amet, consectetur adipiscing elit.
+                  Pharetra vitae quam integer aenean.
+                </p>
               </div>
-              <h4 className="pm:w-[90%] font-semibold pm:mx-auto">
-                Visit the place and enjoy the experience.
-              </h4>
-              <p className="fs-15 m-0 pm:px-2 opacity-75">
-                orem ipsum dolor sit amet, consectetur adipiscing elit. Pharetra
-                vitae quam integer aenean.
-              </p>
             </div>
           </div>
         </div>
       </div>
-
       <div className="bg-[#F84525]">
         <div className="flex justify-center pb-12 ">
           <div
-            className="pt-[10%] pm:pt-[20%] aos-init aos-animate w-full"
+            className="pt-[5%] pm:pt-[20%] aos-init aos-animate w-full"
             data-aos="fade-down"
             data-aos-delay="400"
           >
             <p className="text-center text-[2.5rem] pm:text-lg text-white font-caveat">
               Top Regions
             </p>
-            <h1 className="text-[3rem] text-white font-semibold pm:text-2xl text-center pt-4 pb-0 pm:pb-2 pm:leading-3">
+            <h1 className="text-[3rem] text-white font-semibold pm:text-2xl text-center  pb-0 pm:pb-2 pm:leading-3">
               Explore Cities
             </h1>
-            <p className="text-center text-white text-md font-medium py-6 pm:pt-1 pm:text-xs">
+            <p className="text-center text-white text-md pt-2 pb-6 pm:pt-1 pm:text-xs">
               Discover exciting categories.{" "}
               <span className="text-white ">Find what you’re looking for</span>{" "}
             </p>
@@ -383,8 +381,12 @@ export const Home = () => {
 
             <div className="flex pm:flex-wrap justify-center align-center w-full pm:px-0 px-16">
               <div className="w-1/2 pm:w-full">
-                <h1 className="pl-[10%] pm:px-4 py-6 pm:text-3xl text-[3.5rem] justify-center text-white">
-                  Find your perfect Place based on  <span className="font-caveat text-[40px] pm:text-[26px]"> your interest</span>
+                <h1 className="pl-[10%] pm:px-4 py-6 pm:text-3xl text-[3rem] justify-center text-white">
+                  Find your perfect Place based on{" "}
+                  <span className="font-caveat text-[40px] pm:text-[26px]">
+                    {" "}
+                    your interest
+                  </span>
                 </h1>
                 <img
                   className="px-[5%] rounded-[10%] "
@@ -426,7 +428,7 @@ export const Home = () => {
       </div>
 
       <div className="flex pm:flex-wrap justify-center align-center w-full py-[5%]  mx-auto">
-      {/* <div className=""> */}
+        {/* <div className=""> */}
         <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] pt-6 lg:overflow-y-auto lg:sticky lg:top-0 lg:h-screen">
           <p className=" text-[2rem] pm:text-lg text-[#F84525] pm:text-center font-caveat pm:text-[1.37rem]">
             Places
@@ -465,10 +467,7 @@ export const Home = () => {
         </div>
       </div>
 
-
       <Footer />
     </>
   );
 };
-
-
