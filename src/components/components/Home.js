@@ -88,10 +88,11 @@ const Registration = () => {
             Green Mart Apartments
           </h1>
           <p className="leading-relaxed pm:text-sm text-justify">
-            Dui urna vehicula tincidunt pretium consequat luctus mi
+            Dui urna vehicula tincidunt pretium consequat luctus mi, platea
+            fermentum conubia tempus ac orci.
           </p>
         </div>
-        <div className="flex mt-8 mb-4  pm:mt-4 pm:mb-10 justify-justify items-center gap-4">
+        <div className="flex mt-9 pm:mt-4 pm:mb-10 justify-justify items-center gap-4">
           <a
             href="tel:+4733378901"
             className="flex gap-2 items-center fs-13 fw-semibold"
@@ -401,7 +402,7 @@ const Registration = () => {
       </div>
 
       <div className="flex pm:flex-wrap justify-center align-center w-full py-[5%]  mx-auto">
-        <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] py-6 contaiz">
+        <div className="w-[35%] pm:w-full pl-[10%] pm:px-[5%] py-6">
           <p className=" text-4xlpm:text-lg text-[#F84525] pm:text-center">
             Places
           </p>
@@ -433,7 +434,7 @@ const Registration = () => {
             ></path>
           </svg>
         </div>
-        <div className="w-[60%] pm:w-[100%] pm:pl-0 pl-[4%] contaiz">
+        <div className="w-[60%] pm:w-[100%] pm:pl-0 pl-[4%] ">
           <div className="">{cards}</div>
         </div>
       </div>
