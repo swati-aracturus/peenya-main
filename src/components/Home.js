@@ -16,27 +16,6 @@ export const Home = () => {
     }, 500); // Delay to ensure the DOM is fully loaded
   }, []);
 
-//api integration
-  async function handlesubmit(e){
-    e.preventDefault()
-    console.log(email,password)
-    let obj=[email,password]
-   let result= await fetch('api.peenya.info/api/user/add_listing',{
-    method:"POST",
-    headers:{
-    "Content-Type":"application/json",
-    "Accept":"application/json"
-   },
-   body:JSON.stringify(obj)
-
-   
-   })
-
-  result=await result.json();
-  localStorage.setItem("id",JSON.stringify(result))
-  history.pushState("/add")
-}
-
   const cards = Array.from({ length: 9 }, (_, index) => (
     <div
       key={index}

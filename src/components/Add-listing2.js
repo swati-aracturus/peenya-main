@@ -1,365 +1,440 @@
-
-import axios from 'axios';
 import React, { useState, useEffect, useRef } from "react";
+import Axios from "axios";
 import Header2 from "./Header2";
 import Sidebar from "./Sidebar";
-import Drop from "./Drops";
-const ListingFormPage = () => {
+
+export const Add_listing2 = () => {
+  const [isOpen, setIsOpen] = useState(window.innerWidth > 450);
   const [formData, setFormData] = useState({
-    title: '',
-    description: '',
-    phone: '',
-    website: '',
-    email: '',
-    password: '',
-    facebook: '',
-    twitter: '',
-    instagram: '',
-    linkedin: '',
-    garden: false,
-    securityCameras1: false,
-    laundry: false,
-    internet: false,
-    pool: false,
-    videoSurveillance: false,
-    laundryRoom: false,
-    jacuzzi: false,
-    securityCameras2: false,
-    openingHours: {
-      monday: { open: '', close: '' },
-      tuesday: { open: '', close: '' },
-      wednesday: { open: '', close: '' },
-      thursday: { open: '', close: '' },
-      friday: { open: '', close: '' },
-      saturday: { open: '', close: '' },
-      sunday: { open: '', close: '' },
+    listingTitle: "",
+    category: "",
+    tags: "",
+    city: "",
+    address: "",
+    state: "",
+    zipCode: "",
+    description: "",
+    phone: "",
+    website: "",
+    email: "",
+    facebook: "",
+    twitter: "",
+    instagram: "",
+    linkedin: "",
+    amenities: {
+      garden: false,
+      securityCameras1: false,
+      laundry: false,
+      internet: false,
+      pool: false,
+      videoSurveillance: false,
+      laundryRoom: false,
+      jacuzzi: false,
+      securityCameras2: false,
     },
+    pricingPlans: [{ title: "", description: "", price: "", status: "" }],
   });
 
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    if (type === 'checkbox') {
-      setFormData({ ...formData, [name]: checked });
-    } else if (name.includes('-open') || name.includes('-close')) {
-      const day = name.split('-')[0];
-      const timeType = name.split('-')[1];
-      setFormData({
-        ...formData,
-        openingHours: {
-          ...formData.openingHours,
-          [day]: { ...formData.openingHours[day], [timeType]: value },
+  const fileInputRef = useRef(null);
+  const [fileName, setFileName] = useState("");
+  const [image1, setImage1] = useState("");
+
+  useEffect(() => {
+    const checkIsOpen = () => {
+      setIsOpen(window.innerWidth > 450);
+    };
+
+    window.addEventListener("resize", checkIsOpen);
+    checkIsOpen();
+    return () => window.removeEventListener("resize", checkIsOpen);
+  }, []);
+
+  const handleIconClick = () => {
+    fileInputRef.current.click();
+  };
+
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      setFileName(file.name);
+      setImage1(file);
+    }
+  };
+
+  const handleChange = (event) => {
+    const { id, value, type, checked } = event.target;
+    if (type === "checkbox") {
+      setFormData((prev) => ({
+        ...prev,
+        amenities: {
+          ...prev.amenities,
+          [id]: checked,
+        },
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [id]: value,
+      }));
+    }
+  };
+
+  const handlePricingChange = (index, event) => {
+    const { id, value } = event.target;
+    const newPricingPlans = [...formData.pricingPlans];
+    newPricingPlans[index][id] = value;
+    setFormData((prev) => ({
+      ...prev,
+      pricingPlans: newPricingPlans,
+    }));
+  };
+
+  const handleAddPricingPlan = () => {
+    setFormData((prev) => ({
+      ...prev,
+      pricingPlans: [
+        ...prev.pricingPlans,
+        { title: "", description: "", price: "", status: "" },
+      ],
+    }));
+  };
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      // Prepare form data
+      const data = new FormData();
+      data.append("listingTitle", formData.listingTitle);
+      data.append("category", formData.category);
+      data.append("tags", formData.tags);
+      data.append("city", formData.city);
+      data.append("address", formData.address);
+      data.append("state", formData.state);
+      data.append("zipCode", formData.zipCode);
+      data.append("description", formData.description);
+      data.append("phone", formData.phone);
+      data.append("website", formData.website);
+      data.append("email", formData.email);
+      data.append("facebook", formData.facebook);
+      data.append("twitter", formData.twitter);
+      data.append("instagram", formData.instagram);
+      data.append("linkedin", formData.linkedin);
+
+      // Append amenities
+      for (const [key, value] of Object.entries(formData.amenities)) {
+        data.append(`amenities[${key}]`, value);
+      }
+
+      // Append pricing plans
+      formData.pricingPlans.forEach((plan, index) => {
+        data.append(`pricingPlans[${index}][title]`, plan.title);
+        data.append(`pricingPlans[${index}][description]`, plan.description);
+        data.append(`pricingPlans[${index}][price]`, plan.price);
+        data.append(`pricingPlans[${index}][status]`, plan.status);
+      });
+
+      // Append file
+      if (image1) {
+        data.append("image1", image1);
+      }
+
+      // Make API request
+      const response = await Axios.post("https://api.peenya.info/api/user/add_listing", data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
         },
       });
-    } else {
-      setFormData({ ...formData, [name]: value });
-    }
-  };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    try {
-      const response = await addListing2(formData);
-      console.log(response.data);
+      // Handle success
+      console.log("Form submitted successfully:", response.data);
     } catch (error) {
-      console.error('There was an error adding the listing:', error);
-    }
-  };
-
-  const addListing2 = async (listingData) => {
-    try {
-      const response = await axios.post('/api/add-listing', listingData);
-      return response;
-    } catch (error) {
-      console.error('Error in addListing2:', error);
-      throw error;
+      // Handle error
+      console.error("Error submitting form:", error);
     }
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
-      <div className="relative py-3 sm:max-w-xl sm:mx-auto">
-        <div className="absolute inset-0 bg-gradient-to-r from-teal-400 to-purple-600 shadow-lg transform -skew-y-6 sm:skew-y-0 sm:-rotate-6 sm:rounded-3xl"></div>
-        <div className="relative px-4 py-10 bg-white shadow-lg sm:rounded-3xl sm:p-20">
-          <div className="max-w-md mx-auto">
-            <h1 className="text-2xl font-semibold">Listing Form</h1>
-            <form onSubmit={handleSubmit}>
-              <div className="space-y-4 mt-4">
-                <div>
-                  <label htmlFor="title" className="block text-gray-700">Title</label>
-                  <input
-                    type="text"
-                    id="title"
-                    name="title"
-                    value={formData.title}
-                    onChange={handleChange}
-                    placeholder="Title"
-                    className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                  />
-                </div>
-                <div className="mt-4">
-                  <label htmlFor="description" className="block text-gray-700 mb-2">Description</label>
-                  <textarea
-                    id="description"
-                    name="description"
-                    rows="5"
-                    value={formData.description}
-                    onChange={handleChange}
-                    placeholder="Description"
-                    className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                  ></textarea>
-                </div>
-                <div className="space-y-4 mt-4">
-                  <div>
-                    <label htmlFor="phone" className="block text-gray-700">Phone</label>
-                    <input
-                      type="text"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      placeholder="(123) 456-7890"
-                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-4 mt-4">
-                  <div>
-                    <label htmlFor="website" className="block text-gray-700">Website</label>
-                    <input
-                      type="text"
-                      id="website"
-                      name="website"
-                      value={formData.website}
-                      onChange={handleChange}
-                      placeholder="www.google.com"
-                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-4 mt-4">
-                  <div>
-                    <label htmlFor="email" className="block text-gray-700">Email</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="Example@Gmail.com"
-                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                    />
-                  </div>
-                </div>
-                <div className="space-y-4 mt-4">
-                  <div>
-                    <label htmlFor="password" className="block text-gray-700">Password</label>
-                    <input
-                      type="password"
-                      id="password"
-                      name="password"
-                      value={formData.password}
-                      onChange={handleChange}
-                      placeholder="Password"
-                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-4 gap-4 pm:grid-cols-1 mt-4">
-                  <div>
-                    <label htmlFor="facebook" className="block text-gray-700">Facebook</label>
-                    <input
-                      type="text"
-                      id="facebook"
-                      name="facebook"
-                      value={formData.facebook}
-                      onChange={handleChange}
-                      placeholder="https://"
-                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="twitter" className="block text-gray-700">Twitter</label>
-                    <input
-                      type="text"
-                      id="twitter"
-                      name="twitter"
-                      value={formData.twitter}
-                      onChange={handleChange}
-                      placeholder="https://"
-                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="instagram" className="block text-gray-700">Instagram</label>
-                    <input
-                      type="text"
-                      id="instagram"
-                      name="instagram"
-                      value={formData.instagram}
-                      onChange={handleChange}
-                      placeholder="https://"
-                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="linkedin" className="block text-gray-700">LinkedIn</label>
-                    <input
-                      type="text"
-                      id="linkedin"
-                      name="linkedin"
-                      value={formData.linkedin}
-                      onChange={handleChange}
-                      placeholder="https://"
-                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                    />
-                  </div>
-                </div>
-                <div className="grid grid-cols-2 gap-4 mt-4">
-                  <div className="space-y-4">
-                    <label className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        id="garden"
-                        name="garden"
-                        checked={formData.garden}
-                        onChange={handleChange}
-                        className="form-checkbox h-5 w-5 text-red-600"
-                      />
-                      <span className="text-gray-900">Garden</span>
-                    </label>
-                    <label className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        id="securityCameras1"
-                        name="securityCameras1"
-                        checked={formData.securityCameras1}
-                        onChange={handleChange}
-                        className="form-checkbox h-5 w-5 text-red-600"
-                      />
-                      <span className="text-gray-900">Security Cameras</span>
-                    </label>
-                    <label className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        id="laundry"
-                        name="laundry"
-                        checked={formData.laundry}
-                        onChange={handleChange}
-                        className="form-checkbox h-5 w-5 text-red-600"
-                      />
-                      <span className="text-gray-900">Laundry</span>
-                    </label>
-                    <label className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        id="internet"
-                        name="internet"
-                        checked={formData.internet}
-                        onChange={handleChange}
-                        className="form-checkbox h-5 w-5 text-red-600"
-                      />
-                      <span className="text-gray-900">Internet</span>
-                    </label>
-                    <label className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        id="pool"
-                        name="pool"
-                        checked={formData.pool}
-                        onChange={handleChange}
-                        className="form-checkbox h-5 w-5 text-red-600"
-                      />
-                      <span className="text-gray-900">Pool</span>
-                    </label>
-                    <label className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        id="videoSurveillance"
-                        name="videoSurveillance"
-                        checked={formData.videoSurveillance}
-                        onChange={handleChange}
-                        className="form-checkbox h-5 w-5 text-red-600"
-                      />
-                      <span className="text-gray-900">Video Surveillance</span>
-                    </label>
-                    <label className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        id="laundryRoom"
-                        name="laundryRoom"
-                        checked={formData.laundryRoom}
-                        onChange={handleChange}
-                        className="form-checkbox h-5 w-5 text-red-600"
-                      />
-                      <span className="text-gray-900">Laundry Room</span>
-                    </label>
-                    <label className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        id="jacuzzi"
-                        name="jacuzzi"
-                        checked={formData.jacuzzi}
-                        onChange={handleChange}
-                        className="form-checkbox h-5 w-5 text-red-600"
-                      />
-                      <span className="text-gray-900">Jacuzzi</span>
-                    </label>
-                    <label className="flex items-center space-x-3">
-                      <input
-                        type="checkbox"
-                        id="securityCameras2"
-                        name="securityCameras2"
-                        checked={formData.securityCameras2}
-                        onChange={handleChange}
-                        className="form-checkbox h-5 w-5 text-red-600"
-                      />
-                      <span className="text-gray-900">Security Cameras</span>
-                    </label>
-                  </div>
-                </div>
-                <div className="mt-8">
-                  <h2 className="text-xl font-bold">Opening Hours</h2>
-                  <div className="space-y-4 mt-4">
-                    {['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'].map(day => (
-                      <div key={day} className="flex items-center space-x-3">
-                        <label className="w-1/3 capitalize">{day}</label>
-                        <div className="flex-grow flex space-x-2">
-                          <input
-                            type="time"
-                            id={`${day}-open`}
-                            name={`${day}-open`}
-                            value={formData.openingHours[day].open}
-                            onChange={handleChange}
-                            className="block w-1/2 border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                          />
-                          <input
-                            type="time"
-                            id={`${day}-close`}
-                            name={`${day}-close`}
-                            value={formData.openingHours[day].close}
-                            onChange={handleChange}
-                            className="block w-1/2 border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-[#f8f4f3] sm:text-sm"
-                          />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              </div>
-              <div className="mt-8">
-                <button
-                  type="submit"
-                  className="bg-[#f8f4f3] text-[#ba8f8b] font-semibold py-2 px-4 rounded-lg shadow-md hover:bg-[#e0d7d6] focus:outline-none focus:ring-2 focus:ring-[#ba8f8b] focus:ring-opacity-75"
-                >
-                  Submit
-                </button>
-              </div>
-            </form>
+    <div
+      className={`${
+        isOpen ? "ml-[20.5rem] pm:ml-0 " : "ml-[5.7rem] pm:ml-0"
+      } bg-[#f8f4f3] pb-6  `}
+    >
+      <div className="fixed w-full -ml-4 pm:-ml-28">
+        <Header2 sidebarOpen={isOpen} setSidebarOpen={setIsOpen} />
+      </div>
+      <div className="w-full pt-24 px-6 flex flex-col gap-4">
+        <div className="bg-white rounded-3xl pm:mt-8">
+          <div className="p-5 flex justify-start items-center gap-4 rounded-lg lg:relative z-0">
+            <div className="lg:absolute pm:left-0 w-1 h-8 rounded-xl bg-[#f84525] -ml-5 "></div>
+            <h1 className="text-xl ml-2">Basic Informations</h1>
           </div>
+          <hr />
+          <form className="w-full mx-auto p-4 mt-4" onSubmit={handleSubmit}>
+            <div className="grid grid-cols-2 gap-4 pm:grid-cols-1">
+              <div>
+                <label htmlFor="listingTitle" className="block text-gray-700 mb-2">Listing Title</label>
+                <input
+                  type="text"
+                  id="listingTitle"
+                  value={formData.listingTitle}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="category" className="block text-gray-700 mb-2">Category</label>
+                <select
+                  id="category"
+                  value={formData.category}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                >
+                  <option value="">Select Category</option>
+                  <option value="category1">Category 1</option>
+                  <option value="category2">Category 2</option>
+                  <option value="category3">Category 3</option>
+                </select>
+              </div>
+            </div>
+            <div className="space-y-4 my-3">
+              <div>
+                <label htmlFor="tags" className="block text-gray-700">Tags</label>
+                <input
+                  type="text"
+                  id="tags"
+                  value={formData.tags}
+                  onChange={handleChange}
+                  placeholder="+ Add Tags"
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+            </div>
+            <div className="my-3">
+              <label htmlFor="description" className="block text-gray-700">Description</label>
+              <textarea
+                id="description"
+                value={formData.description}
+                onChange={handleChange}
+                rows="4"
+                className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+              />
+            </div>
+            <div className="grid grid-cols-2 gap-4 pm:grid-cols-1">
+              <div>
+                <label htmlFor="city" className="block text-gray-700">City</label>
+                <input
+                  type="text"
+                  id="city"
+                  value={formData.city}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="address" className="block text-gray-700">Address</label>
+                <input
+                  type="text"
+                  id="address"
+                  value={formData.address}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4 pm:grid-cols-1">
+              <div>
+                <label htmlFor="state" className="block text-gray-700">State</label>
+                <input
+                  type="text"
+                  id="state"
+                  value={formData.state}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="zipCode" className="block text-gray-700">Zip Code</label>
+                <input
+                  type="text"
+                  id="zipCode"
+                  value={formData.zipCode}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4 pm:grid-cols-1">
+              <div>
+                <label htmlFor="phone" className="block text-gray-700">Phone</label>
+                <input
+                  type="text"
+                  id="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="website" className="block text-gray-700">Website</label>
+                <input
+                  type="text"
+                  id="website"
+                  value={formData.website}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4 pm:grid-cols-1">
+              <div>
+                <label htmlFor="email" className="block text-gray-700">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="facebook" className="block text-gray-700">Facebook</label>
+                <input
+                  type="text"
+                  id="facebook"
+                  value={formData.facebook}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4 pm:grid-cols-1">
+              <div>
+                <label htmlFor="twitter" className="block text-gray-700">Twitter</label>
+                <input
+                  type="text"
+                  id="twitter"
+                  value={formData.twitter}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+              <div>
+                <label htmlFor="instagram" className="block text-gray-700">Instagram</label>
+                <input
+                  type="text"
+                  id="instagram"
+                  value={formData.instagram}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+            </div>
+            <div className="grid grid-cols-2 gap-4 pm:grid-cols-1">
+              <div>
+                <label htmlFor="linkedin" className="block text-gray-700">LinkedIn</label>
+                <input
+                  type="text"
+                  id="linkedin"
+                  value={formData.linkedin}
+                  onChange={handleChange}
+                  className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                />
+              </div>
+              <div>
+                <label className="block text-gray-700">Upload Image</label>
+                <input
+                  type="file"
+                  ref={fileInputRef}
+                  onChange={handleFileChange}
+                  className="mt-1"
+                />
+                {fileName && <p>Selected file: {fileName}</p>}
+              </div>
+            </div>
+            <div className="my-3">
+              <label className="block text-gray-700">Amenities</label>
+              <div className="space-y-2">
+                {Object.keys(formData.amenities).map((amenity) => (
+                  <div key={amenity}>
+                    <input
+                      type="checkbox"
+                      id={amenity}
+                      checked={formData.amenities[amenity]}
+                      onChange={handleChange}
+                    />
+                    <label htmlFor={amenity} className="ml-2 text-gray-700">{amenity}</label>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div className="my-3">
+              <label className="block text-gray-700">Pricing Plans</label>
+              {formData.pricingPlans.map((plan, index) => (
+                <div key={index} className="border p-4 rounded-md mb-4">
+                  <div>
+                    <label htmlFor={`pricingPlans[${index}][title]`} className="block text-gray-700">Title</label>
+                    <input
+                      type="text"
+                      id={`pricingPlans[${index}][title]`}
+                      value={plan.title}
+                      onChange={(e) => handlePricingChange(index, e)}
+                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor={`pricingPlans[${index}][description]`} className="block text-gray-700">Description</label>
+                    <input
+                      type="text"
+                      id={`pricingPlans[${index}][description]`}
+                      value={plan.description}
+                      onChange={(e) => handlePricingChange(index, e)}
+                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor={`pricingPlans[${index}][price]`} className="block text-gray-700">Price</label>
+                    <input
+                      type="text"
+                      id={`pricingPlans[${index}][price]`}
+                      value={plan.price}
+                      onChange={(e) => handlePricingChange(index, e)}
+                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                    />
+                  </div>
+                  <div className="mt-2">
+                    <label htmlFor={`pricingPlans[${index}][status]`} className="block text-gray-700">Status</label>
+                    <input
+                      type="text"
+                      id={`pricingPlans[${index}][status]`}
+                      value={plan.status}
+                      onChange={(e) => handlePricingChange(index, e)}
+                      className="mt-1 block w-full border bg-[#f8f4f3] border-gray-300 rounded-md shadow-sm focus:ring-[#f8f4f3] focus:shadow-lg focus:border-ring-[#f8f4f3] sm:text-sm"
+                    />
+                  </div>
+                </div>
+              ))}
+              <button
+                type="button"
+                onClick={handleAddPricingPlan}
+                className="text-blue-600"
+              >
+                + Add Pricing Plan
+              </button>
+            </div>
+            <div className="my-4">
+              <button
+                type="submit"
+                className="bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600"
+              >
+                Submit
+              </button>
+            </div>
+          </form>
         </div>
       </div>
+      <Sidebar sidebarOpen={isOpen} setSidebarOpen={setIsOpen} />
     </div>
   );
 };
 
-export default ListingFormPage;
+export default Add_listing2;
